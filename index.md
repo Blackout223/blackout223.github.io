@@ -1,43 +1,86 @@
 ---
 layout: default
-title: Cyber Security Portfolio
+title: Cybersecurity Portfolio
 ---
 
-# 🔒 Cyber Security Portfolio
+# 🔒 Cybersecurity Portfolio
 
-Welcome to my cybersecurity portfolio! I'm passionate about cyber security and continuously building my skills through hands-on training, challenges, and real-world projects.
-
-This portfolio showcases my journey in cybersecurity, including completed training modules, certifications, and project writeups from various platforms.
-
----
-
-## 📂 My Projects
-
-Explore my work organized by platform:
-
-### [🎯 TryHackMe Projects](https://blackout223.github.io/Cyber-Security-Projects/)
-Hands-on cybersecurity challenges, room writeups, and practical penetration testing exercises.
-
-### [☁️ KodeKloud Certifications](https://blackout223.github.io/Cyber-Security-Projects/)
-Cloud infrastructure, DevOps security, and container orchestration training.
-
-### [🌐 Nextwork Projects](https://blackout223.github.io/Cyber-Security-Projects/)
-Professional networking and career development in cybersecurity.
+💼 [GitHub](https://github.com/Blackout223) | 🎯 [TryHackMe](https://tryhackme.com/p/Blackout)
 
 ---
 
-## 🛠️ Skills & Tools
+## Summary
 
-**Security Tools:** Nmap, Burp Suite, Metasploit, Wireshark  
-**Operating Systems:** Kali Linux, Ubuntu, Windows  
-**Cloud Platforms:** AWS, Docker, Kubernetes  
-**Programming:** Python, Bash
+Welcome to my cybersecurity portfolio. This site showcases my hands-on projects, security research, and continuous learning journey.
+
+I focus on vulnerability management, penetration testing, cloud security, and incident response. Through practical challenges and real-world scenarios, I'm constantly developing my technical skills and staying current with emerging threats and security best practices.
 
 ---
 
-## 📫 Connect
+## Technical Skills
 
-- **GitHub:** [github.com/Blackout223](https://github.com/Blackout223)
-- **TryHackMe:** [https://tryhackme.com/p/Blackout](https://tryhackme.com/p/Blackout)
+### Security Tools
+- Nmap, Metasploit, Burp Suite
+- Wireshark, John the Ripper
+- Splunk, Elastic SIEM, Microsoft Defender/Sentinel
+
+### Cloud & Infrastructure
+- AWS (EC2, S3, IAM, CloudTrail)
+- Azure (Sentinel, Defender)
+- Docker, Kubernetes
+- Linux (Ubuntu, Kali), Windows Server
+
+### Security Domains
+- Vulnerability Management
+- Penetration Testing
+- Incident Response
+- Endpoint Protection
+- SIEM Analysis
+
 ---
 
+## Certifications
+
+**AWS Certified Cloud Practitioner**  
+*April 2025 - April 2028*
+
+**Microsoft SC-200: Security Operations Analyst**  
+*In Progress*
+
+---
+
+## My Projects
+
+### 🎯 TryHackMe Writeups
+**13 Rooms Completed | Penetration Testing & CTF Challenges**
+
+Comprehensive writeups demonstrating offensive security techniques, including web exploitation, privilege escalation, and network enumeration across various difficulty levels.
+
+[View All TryHackMe Writeups →](tryhackme.html)
+
+---
+
+### ☁️ KodeKloud Projects
+**Cloud Security & DevOps | Certifications & Labs**
+
+Cloud infrastructure security projects focusing on AWS, Docker, Kubernetes, and Linux system administration with an emphasis on security hardening and best practices.
+
+[View KodeKloud Projects →](kodekloud.html)
+
+---
+
+### 🌐 Nextwork Projects
+**Professional Development | Security Research**
+
+Professional cybersecurity projects including security assessments, policy development, and network security implementations.
+
+[View Nextwork Projects →](nextwork.html)
+
+## Continuous Learning
+
+I'm actively engaged in continuous professional development through:
+- Completing hands-on labs and CTF challenges
+- Pursuing industry certifications
+- Staying current with threat intelligence and security research
+
+---
