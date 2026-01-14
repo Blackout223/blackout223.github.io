@@ -38,6 +38,6 @@ Professional networking and career development in cybersecurity.
 ## 📫 Connect
 
 - **GitHub:** [github.com/Blackout223](https://github.com/Blackout223)
-- **TryHackMe:** [https://tryhackme.com/p/Blackout]
+- **TryHackMe:** [https://tryhackme.com/p/Blackout](https://tryhackme.com/p/Blackout)
 ---
 
