@@ -51,30 +51,17 @@ I focus on vulnerability management, penetration testing, cloud security, and in
 
 ## My Projects
 
-### 🎯 TryHackMe Writeups
-**13 Rooms Completed | Penetration Testing & CTF Challenges**
 
-Comprehensive writeups demonstrating offensive security techniques, including web exploitation, privilege escalation, and network enumeration across various difficulty levels.
+### [TryHackMe Writeups](/thm)
+Detailed walkthroughs and analysis of TryHackMe challenges.
 
-[View All TryHackMe Writeups →](/TryHackMe%20Writeups/)
+### [KodeKloud 100 Days Challenge](/kodekloud)
+My progress through the KodeKloud DevOps challenge.
 
----
-
-### ☁️ KodeKloud Projects
-**Cloud Security & DevOps | Certifications & Labs**
-
-Cloud infrastructure security projects focusing on AWS, Docker, Kubernetes, and Linux system administration with an emphasis on security hardening and best practices.
-
-[View KodeKloud Projects →](/KodeKloud/100%20Days/)
+### [Cloud Projects](/cloud-projects)
+Hands-on AWS projects.
 
 ---
-
-### 🌐 Nextwork Projects
-**Professional Development | Security Research**
-
-Professional cybersecurity projects including security assessments, policy development, and network security implementations.
-
-[View Nextwork Projects →](/NextWork%20Cloud%20Projects/)
 
 ## Continuous Learning
 
