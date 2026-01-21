@@ -1,4 +1,7 @@
-# Day 4 - Create a Virtual Network (VNet) in Azure
+---
+layout: default
+title: Azure Day 4 - Create Virtual Network
+---
 
 # Overview 
 
