@@ -21,14 +21,14 @@ I focus on vulnerability management, penetration testing, cloud security, and in
 
 ### Security Tools
 - Nmap, Metasploit, Burp Suite
-- Wireshark, John the Ripper
+- Wireshark
 - Splunk, Elastic, Microsoft Defender/Sentinel
 
 ### Cloud & Infrastructure
 - AWS 
 - Azure
 - Docker, Kubernetes
-- Linux (Ubuntu, Kali), Windows
+- Linux (Ubuntu, Kali), Windows Servers
 
 ### Security Domains
 - Vulnerability Management
@@ -69,5 +69,5 @@ I'm actively engaged in continuous professional development through:
 - Completing hands-on labs and CTF challenges
 - Pursuing industry certifications
 - Staying current with threat intelligence and security research
-
+- Reading cybersecurity books
 ---
