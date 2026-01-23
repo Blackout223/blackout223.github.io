@@ -20,5 +20,6 @@ This is me doing 100 days of Devops on KodeKloud, which will include AWS, Azure 
 | [Day 2 ](/KodeKloud/100%20Days/Azure/Day%202.pdf) | Create an Azure Virtual Machine 
 | [Day 3 ](/KodeKloud/100%20Days/Azure/Day%203.pdf) | Create VM using Azure CLI 
 | [Day 4](/KodeKloud/100%20Days/Azure/Day%204)   | Create a Virtual Network (VNet) in Azure 
-
+| [Day 5](/KodeKloud/100%20Days/Azure/Day%205.md) | Create a Virtual Network (IPv4) in Azure
+ 
 ---
