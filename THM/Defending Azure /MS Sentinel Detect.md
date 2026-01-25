@@ -174,47 +174,47 @@ Finally, **automated response actions** are:
 - Under **Configuration**, select **Analytics**
 - Switch to the **Rule templates** tab
 
-![In the "Create new automation rule" section of Microsoft Sentinel, the "Rule templates" tab is selected, with two other tabs: "Active rules" and "Anomalies."](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/fe1f0b87f6c871bfd6389abc4d4c209f.png)
+<img width="433" height="77" alt="image" src="https://github.com/user-attachments/assets/0c029168-d8e4-47ae-9bfc-21cab94352dc" />
 
 - Search for the "**rare subscription-level operations**" rule
 
-![Rule templates in Microsoft Sentinel: Active rules, Rule templates, and Anomalies tabs are displayed, with "Rule templates" selected. A search bar shows "rare subscription-level," and there's an "Add filter" button.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/2ba61e59f638c0488c72abf4b657a074.png)
+<img width="1098" height="161" alt="image" src="https://github.com/user-attachments/assets/7dd05e4b-eaef-457f-b4ae-0906ea577edf" />
 
 - Select the rule template and click "**Create rule**"
 
-!["Create a new Scheduled rule" interface in Azure Sentinel, with the "General" tab and "Analytics rule details" section visible.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737153893152.png)
+<img width="618" height="617" alt="image" src="https://github.com/user-attachments/assets/4b57b916-daaa-4629-8f3a-26be11667a87" />
 
 - Read the **rule description** for some background context
 - Expand the **MITRE ATT&CK** drop-down to see how to map the rule to the different **MITRE Tactics and Techniques**
 
-![List of stages in a cybersecurity attack lifecycle, each with a checkbox next to it. The stages include Reconnaissance, Resource Development, Initial Access, Execution, Persistence (checked), Privilege Escalation, Defense Evasion, Credential Access (checked), and Discovery.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/5efbaebdaaea011c857b438d-1725034477656.png)
+<img width="208" height="245" alt="image" src="https://github.com/user-attachments/assets/38c0ab38-cdeb-40c4-89b4-d6c5485be105" />
 
 - On the **Set rule logic** tab, read through the **Rule query**  
     - Note the **SensitiveOperationList** array values
     - Also, note that you can easily customize the rule query to your needs by simply modifying the **SensitiveOperationList** array values here
 
-![The "Set rule logic" tab in the "Analytics rule wizard - Create a new Scheduled rule" screen in Azure Sentinel shows a KQL query for detecting rare subscription-level operations in Azure.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737043603703.png)
+<img width="1348" height="526" alt="image" src="https://github.com/user-attachments/assets/42e4f4fb-b822-4699-8eef-9e9835204513" />
 
 - The **test with current data** shows you a graphical simulation of the rule
 
-![The "Results simulation" section in Azure Sentinel's "Analytics rule wizard" visualizes the last 50 evaluations of a defined analytics rule.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/5efbaebdaaea011c857b438d-1725034605704.png)
+<img width="754" height="111" alt="image" src="https://github.com/user-attachments/assets/37cd93e1-1cf2-46ff-be7b-ae449103b7fb" />
 
 - Update the **Query scheduling** to the following:
     - Run query **every 1 hour**
     - Lookup data **from the last 7 days**
 
-![query scheduling interface with two settings. The first setting is labeled "Run query every" with a value set to 1 and a dropdown menu set to "Hours."](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/b7a13839bc5918708368fb7822a2e567.png)
+<img width="645" height="175" alt="image" src="https://github.com/user-attachments/assets/c2b788e2-6e37-4030-9fb0-250233378b9c" />
 
 - On the **Incident settings** tab:
     - Leave defaults so that **incidents are created** from alerts triggered by this rule.
     - Alert grouping can also be done here to **reduce the noise** from single alert
 
-![The Azure Sentinel query scheduling interface has two sections: "Run query every," with a text box showing "1" and a dropdown set to "Hours."](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/daf54ccd5dbbc30626fc392b415078c2.png)
+<img width="684" height="307" alt="image" src="https://github.com/user-attachments/assets/815c1302-0716-4006-96d9-5de4ab3f9ab1" />
 
 - Select **Review + create** to save the rule
 - Then, go back to the **Active** **Rules** tab, search for the newly created rule, select it, and click **Edit** on the sidebar
 
-![Microsoft Sentinel Analytics interface, specifically focusing on the 'Active rules' section.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737572265667.png)
+<img width="1556" height="1116" alt="image" src="https://github.com/user-attachments/assets/b80f9361-8479-4ec6-94c4-d8c065cda2ef" />
 
 - Select the **Automated response** tab:
     - Add a **new automation rule**:
@@ -225,11 +225,11 @@ Finally, **automated response actions** are:
         - Rule expiration: Leave as default
     - Click **Apply**
 
-![The "Analytics rule wizard - Create a new Scheduled rule" interface in Azure Sentinel shows the "Automated response" tab on the left with an "Add new" button. The "Create new automation rule" window on the right includes fields for "Automation rule name," "Trigger," "Conditions," and "Actions." The "Trigger" is set to "When incident is created," and the action "Add tags" with the tag "subscription" is selected.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737043603905.png)
+<img width="1734" height="989" alt="image" src="https://github.com/user-attachments/assets/2804cf20-0a46-4c06-acad-ea5b83eaab74" />
 
 - Finally, **Review and Create** the rule
 
-!["Review + create" tab in Microsoft Sentinel's Analytics rule wizard for the "Rare subscription-level operations in Azure," which detects sensitive subscription-level events in Azure Activity Logs.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/5efbaebdaaea011c857b438d-1725034904859.png)
+<img width="878" height="461" alt="image" src="https://github.com/user-attachments/assets/9728b9d8-c560-4910-8569-d01bcbaa1444" />
 
 ## Review the Enabled Analytics Rule
 
@@ -239,8 +239,8 @@ Finally, **automated response actions** are:
     - **Rule frequency**
     - **Rule period**
 
-![Configuration of an Azure alert for monitoring rare subscription-level operations. The alert is set to a low severity level, with the content hub as the data source and the status enabled.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737627196962.png)
+<img width="495" height="774" alt="image" src="https://github.com/user-attachments/assets/eadabac0-cdf7-4b9d-b4b2-b63bc28cfc58" />
 
 - Click **Compare with template** to see the differences between your settings and the rule template in YAML representation
 
-![The 'Analytics rule wizard - Edit Scheduled rule' interface in Azure shows a side-by-side comparison of the YAML for the existing rule (version 2.0.3) and the latest template, highlighting differences in query frequency, period, and entity mappings.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/3c57adfd153e449a39696cc7b3f15908.png)
+<img width="1153" height="760" alt="image" src="https://github.com/user-attachments/assets/551def4d-5752-4a7b-82e7-87b871dda1a1" />
