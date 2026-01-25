@@ -1,3 +1,8 @@
+---
+layout: default
+title: MS Sentinel - Introduction
+---
+
 # Microsoft Security Operations Analyst
 
 A **Security Operations Center (SOC)** is a centralized security unit with team(s) responsible for protecting the organization against security threats.
@@ -70,12 +75,15 @@ Microsoft Sentinel performs the above actions and enables security operations by
 - **Respond**
 
 **Microsoft Sentinel is a combination of two security concepts, namely SIEM and which other one?**
+
 **A: SOAR**
 
 **Creating security alerts and incidents is part of which security concept?**
+
 **A: SIEM**
 
 **By means of how many pillars does Microsoft Sentinel help us to perform security operations?**
+
 **A: 4**
 
 # How Microsoft Sentinel Works
@@ -114,21 +122,27 @@ Microsoft Sentinel performs the above actions and enables security operations by
     - Remediation
 
 **What is used to ingest data into Sentinel?**
+
 **A: Data Connectors**
 
 **Where are the ingested logs stored for further correlation and analysis?**
+
 **A: log analytics workspaces**
 
 **Workbooks are essentially `_______` used for visualization**
+
 **A: dashboards**
 
 **When SOC teams are flooded with security alerts and incidents, this is called?**
+
 **A: alert fatigue**
 
 **In Microsoft Sentinel, automation is done via automated workflows, known as?**
+
 **A: playbooks**
 
 **The output of running Analytics rules includes security alerts and?**
+
 **A: Incidents**
 
 # When To Use Microsoft Sentinel
@@ -158,8 +172,10 @@ If the organization has requirements such as:
  Could also use both in conjunction by ingesting Defender for Cloud alerts into Microsoft Sentinel, which would enhance the overall security framework.
 
 **Organizations use Microsoft Sentinel mainly because they need to `_______` their cloud infrastructure.**
+
 **A: monitor**
 
 **With Microsoft Sentinel, there is no need for server provisioning. This means it is?**
+
 **A: cloud-native**
 
