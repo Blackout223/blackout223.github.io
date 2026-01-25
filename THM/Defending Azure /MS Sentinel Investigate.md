@@ -12,16 +12,18 @@ We will look into **incident investigation and management** concepts to see ho
 - Finally, we'll see how we can manage incidents, hand them over, or escalate them a higher level security team
 
 # Events/Alerts/Incidents
-
-|              |                                                                                                                                                                                                                                                                                         |                                                                              |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| **Event**    | Any observable change or occurrence within a system could be routine, informational, or indicative of issues.<br><br>All technology devices create events in the form of log entries and regular status updates, which are recorded as event data in various databases and other files. | A point in time representing the state of service                            |
-| **Alert**    | A notification triggered by an event designed to inform stakeholders of a situation that needs attention.                                                                                                                                                                               | Certain event(s) that meet a threshold                                       |
+                                                                                                                                                                                                                                                                                                                                                                     
+| ------------ | ----------------- | ----------- |
+| **Event** | Any observable change or occurrence within a system could be routine, informational, or indicative of issues.<br><br>All technology devices create events in the form of log entries and regular status updates, which are recorded as event data in various databases and other files. | A point in time representing the state of service
+| **Alert** | A notification triggered by an event designed to inform stakeholders of a situation that needs attention.                                                                                                                                                                               | Certain event(s) that meet a threshold                                       |
 | **Incident** | A specific kind of negative event that disrupts normal operations or services and requires intervention.                                                                                                                                                                                | Contains correlated alerts that indicate impact, disruptive issue, or breach |
+
 **What is a normal activity that happens at a point in time, neither good nor bad called?**
+
 **A: Event**
 
 **What is a negative event that disrupts normal operations and requires investigation called?**
+
 **A: Incident**
 
 # Incidents Overview
