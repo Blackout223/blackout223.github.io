@@ -32,7 +32,7 @@ These data connectors are essential for integrating and ingesting data from vari
 
 The Content hub provides a packaged way of installing and enabling data connectors for various data sources.
 
-![Microsoft Sentinel Data Connectors page in Microsoft Azure. The left sidebar contains navigation options, including Overview, Logs, News & guides, Search, Incidents, Workbooks, Hunting, Notebooks, Entity behavior, Threat intelligence, MITRE ATT&CK, Content hub, Repositories, Community, Workspace manager, Data connectors, Analytics, and Watchlist. The main section displays "0 Connectors" and "0 Connected."](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/5ca1219a03abd8e7934685a0e34ad09e.png)
+<img width="1307" height="795" alt="image" src="https://github.com/user-attachments/assets/d604049f-9ec7-4e15-acf2-092d1f213fd1" />
 
 **Are data connectors specific to each data source? (Yea/Nay)**
 **A: Yea**
@@ -52,17 +52,17 @@ Content hub provides:
 
 Can be referred to as a SIEM library that enables you to ingest data, monitor, alert, hunt, investigate, respond, and connect with different products, platforms, and services in Microsoft Sentinel.
 
-![A "Content hub" interface in a software platform displays 342 solutions and 273 standalone contents, none installed or updated. A table lists contents with columns for Title, Status, Source, Provider, Support, Category, and Type.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/6c855a4491b546b001fcb490fe7944f2.png)
+<img width="1533" height="772" alt="image" src="https://github.com/user-attachments/assets/e6660c4a-7647-4155-ae42-01cce6f1f140" />
 
 ## Content Source: Standalone vs Solutions
 
 Content sources can be **standalone** content or **solutions**.
 
-![A user interface for selecting content sources. There is a search bar labeled "Search values" at the top. Below the search bar, there are three options with checkboxes: "All," "Solution," and "Standalone."](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/1c8db500650fcb45c164628ff77120db.png)  
+<img width="293" height="175" alt="image" src="https://github.com/user-attachments/assets/2a858830-4070-414b-839e-985017fbd634" />
 
 Microsoft Sentinel Solutions are packages of content, such as data connectors, workbooks, analytic rules, playbooks, etc., that fulfil an end-to-end product, domain, or industry vertical scenario in Microsoft Sentinel. We will explore the details of these content types in some upcoming rooms, but for now, we need to get a good grasp of how they are organized in Microsoft Sentinel.
 
-![Content type selection menu with a search bar labeled "Search values" at the top. Options include: "All," "Analytics rule (1387)," "Data connector (316)," "Hunting query (834)," "Parser (299)," "Playbook (411)," "Watchlist (27)," and "Workbook (301)." All checkboxes are selected.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/847793aaf77308b43d634ad9e657d505.png)
+<img width="302" height="338" alt="image" src="https://github.com/user-attachments/assets/2ce21e1f-36b6-477c-8131-7c83e378a91e" />
 
  With no Content hub solution installed, you won't see any data connectors available to connect.
 
