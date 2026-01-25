@@ -83,15 +83,15 @@ To enable Microsoft Sentinel, **Microsoft Sentinel Contributor** permissions a
 
 1. In the Azure portal, search for **Sentinel** at the search bar and select **Microsoft Sentinel**.  
     
-    ![A search result for "sentinel" in the azure portal. The search results are categorized under "All" and "Services," with one service listed: "Microsoft Sentinel."](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/1055a9a1625f32cba18ffd38dc0badae.png)
+<img width="367" height="167" alt="image" src="https://github.com/user-attachments/assets/94ca2ca1-3be5-4dbe-8abb-2ff835025f64" />
 
 2. Since there is no previously created Log Analytics workspace with Sentinel enabled, select **Create Microsoft Sentinel**.  
     
-    ![Microsoft Azure portal interface for Microsoft Sentinel. The screen shows that there are no Microsoft Sentinel instances currently displayed.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/c5fb6a9c7bb738b0fdb53229c572d9c4.png)
+<img width="1035" height="771" alt="image" src="https://github.com/user-attachments/assets/93ae097d-7260-41e5-afe2-356182f21acb" />
 
 3. Creating a Microsoft Sentinel instance enables or adds the service to a LAW. First, we need to create a LAW instance by clicking **Create a new workspace**.  
     
-    ![Microsoft Azure interface for adding Microsoft Sentinel to a workspace. The screen indicates that no workspaces are found and provides an option to create a new workspace.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/443d3560682aabf4df92c933421464d5.png)
+<img width="1035" height="771" alt="image" src="https://github.com/user-attachments/assets/faf1f47d-fecf-4c32-98e1-b77f20d75f96" />
 
 4. Provide the below details and click **Create + Review**, followed by clicking **Create**.
     - **Subscription:** Select the subscription available in the drop-down
@@ -100,17 +100,17 @@ To enable Microsoft Sentinel, **Microsoft Sentinel Contributor** permissions a
     
     - **Region**: Azure region where the **ingested log data will reside**. This setting is significant as the organization might have certain data residency requirements. It is important to note that once created, the **region of a LAW cannot be changed**  
     
-    ![The "Create Log Analytics workspace" page in Microsoft Azure, which is used to set up a workspace for storing and querying log data.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/f3837c897f85978e022a4d964c757dd4.png)
+<img width="1035" height="771" alt="image" src="https://github.com/user-attachments/assets/3aeecc06-9a2d-42d8-bd88-d79c0f9966fc" />
 
 ## Adding Microsoft Sentinel to a Log Analytics Workspace
 
 1. Now, we can add Microsoft Sentinel to the previously created LAW by clicking the **Add** button at the bottom.  
 
-    ![Microsoft Azure portal showing the "Add Microsoft Sentinel to a workspace" page.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/3ae134fe71f3a478863678aeb9ad9f2f.png)
+<img width="780" height="927" alt="image" src="https://github.com/user-attachments/assets/a7603e95-1a32-4742-bf5c-127c0c6b6d3b" />
 
 2. After a while, Microsoft Sentinel is ready to go.  
 
-    ![Microsoft Sentinel dashboard, showing the News & guides pane.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/3f2fbb0992064727fc50a0b79cfb4bb7.png)
+<img width="1320" height="982" alt="image" src="https://github.com/user-attachments/assets/21d4e014-4f35-471b-b876-c7457ecea1cf" />
 
 **What permissions do you need to enable Microsoft Sentinel?**
 **A: Microsoft Sentinel Contributor**
@@ -180,15 +180,15 @@ The more data you have—or keep in the Log Analytics workspace—the more relev
 
 Microsoft Sentinel settings can be found at `Microsoft Sentinel > Select the workspace > Configuration > Settings`.
 
-![Microsoft Sentinel interface within Microsoft Azure. The interface is on the "settings" section.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/395aabc8aebaf39b0b197aabde0c00d8.png)
+<img width="269" height="434" alt="image" src="https://github.com/user-attachments/assets/bdc26f16-e0e0-47d7-9d3f-5f0e3876a512" />
 
 To modify **Data Retention**, we need to go to **Workspace settings** since data is stored in the underlying Log Analytics workspace for Microsoft Sentinel.
 
-![A settings menu with the "Workspace settings" tab highlighted, featuring options like "Entity behavior analytics," "Anomalies," "Workspace manager configuration," "Playbook permissions," "How do we use your data?," "Auditing and health monitoring," and "Remove Microsoft Sentinel."](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1736365471113.png)  
+<img width="418" height="601" alt="image" src="https://github.com/user-attachments/assets/c6c7f642-31e8-4179-b2c9-c579ddb6fcf5" />
 
 **Data Retention** settings are tucked into **Usage and estimated costs** under **Settings**.
 
-!["Usage and estimated costs" section within a Log Analytics workspace in Microsoft Azure.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/9743d5543cb0f2311a04741fbcd8cd74.png)
+<img width="911" height="458" alt="image" src="https://github.com/user-attachments/assets/bf7abb9b-26a8-4399-8860-528260a6d1cd" />
 
 Default data retention is 31 days - Might need to increase it due to governance
 
@@ -196,7 +196,7 @@ Additional charges if longer retention is needed as sentinel billing is bases on
 
 It is important to monitor the organization's log usage details regularly.
 
-!["Data Retention" settings window within a Log Analytics workspace.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/c2ea4034b18fb543518667d911935fa8.png)
+<img width="417" height="394" alt="image" src="https://github.com/user-attachments/assets/f0664508-2f44-402a-be45-0fc14b9bb917" />
 
 **How many sets of settings are there for Microsoft Sentinel?**
 **A: 2**
