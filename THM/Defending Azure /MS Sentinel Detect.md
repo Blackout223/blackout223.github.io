@@ -26,12 +26,15 @@ To recap, general Analytics rules flow and timeline are as follows:
 - These incidents are then triaged by (mostly) SOC Tier-1 analysts
 
 **Do analytics rule templates need to be configured and enabled first in order to detect threats? (Yea/Nay)**
+
 **A: Yea**
 
 **Once "active" Analytics rules are triggered, what is generated in Microsoft Sentinel?**
+
 **A: Alerts**
 
 **Related alerts, with the help of the correlation engine, are recorded and grouped into what?**
+
 **A: Incidents**
 
 # Exploring Analytics Rules
@@ -47,13 +50,13 @@ Microsoft Sentinel Analytics plays an important part in the overall detection o
 
 |   |
 |---|
-|Identification of compromised accounts|
-|**User behaviour analysis -** to detect potentially suspicious patterns|
-|**Network traffic analysis -** to locate trends indicating potential attacks|
-|Detection of **Data exfiltration** by Attackers|
-|Detection of **Insider threats**|
-|Incident investigation and management|
-|**Threat hunting**|
+| Identification of compromised accounts
+| **User behaviour analysis -** to detect potentially suspicious patterns
+| **Network traffic analysis -** to locate trends indicating potential attacks
+| Detection of **Data exfiltration** by Attackers
+| Detection of **Insider threats**
+| Incident investigation and management
+| **Threat hunting**
 ## Exploring Analytics Rules
 
 ![Microsoft Sentinel Analytics interface features a navigation pane on the left with options like Overview, Logs, News & Guides, Search, and threat management tools.Microsoft Sentinel Analytics interface features a navigation pane on the left with options like Overview, Logs, News & Guides, Search, and threat management tools.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737157510708.png)  
@@ -94,12 +97,15 @@ Microsoft Sentinel Analytics plays an important part in the overall detection o
     - Generates high-fidelity alerts.
 
 **Are active rules Analytics rules that are currently running and generating security alerts? (Yea/Nay)**
+
 **A: Yea**
 
 **How often do **Near-Real Time (NRT)** rules run?**
+
 **A: Every Minute**
 
 **Which rule type runs at regular intervals based on specified timing?**
+
 **A: scheduled**
 
 # Analytics Rule Wizard
@@ -149,12 +155,15 @@ Finally, **automated response actions** are:
 ![A dropdown menu titled 'Actions' with six options listed: 'Run playbook,' 'Change status,' 'Change severity,' 'Assign owner,' 'Add tags,' and 'Add task.'](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737626640816.png)
 
 **What is used to customize Analytics rules templates?**
+
 **A: Analytics rule wizard**
 
 **In which part of the wizard can you configure how often the rule will run?**
+
 **A: Query Scheduling**
 
 **Which tab of the wizard serves as the SOAR side of Microsoft Sentinel?**
+
 **A: Automated Response**
 
 # Lab-04: Enable an Analytics Rule
