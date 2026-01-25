@@ -81,7 +81,7 @@ Microsoft Sentinel Solutions are packages of content, such as data connectors, 
 - [Microsoft Sentinel Contributor](https://learn.microsoft.com/en-us/azure/sentinel/roles#microsoft-sentinel-specific-roles)
 - [Log Analytics Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/analytics#log-analytics-contributor)
 
-![The Azure portal shows the "Job function roles" tab, filtered for roles related to "Microsoft Sentinel," including "Microsoft Sentinel Automation Contributor," "Microsoft Sentinel Contributor," "Microsoft Sentinel Playbook Operator," "Microsoft Sentinel Reader," and "Microsoft Sentinel Responder."](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/a1db6e21c255adb58a4b17683e301759.png)
+<img width="954" height="329" alt="image" src="https://github.com/user-attachments/assets/935472d2-4960-4d83-bc00-08021d1889ae" />
 
 **Lab scenario:** Following the initial deployment of Microsoft Sentinel, you are tasked with **installing a Content hub solution**.
 
@@ -93,15 +93,15 @@ Microsoft Sentinel Solutions are packages of content, such as data connectors, 
 - Go to **Microsoft Sentinel** and open the available workspace
 - Under **Content management**, select **Content hub**
 
-![Content management menu with three options: Content hub, Repositories (Preview), and Community.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/25077fc416f36e712a978f9cdb858c6d.png)
+<img width="243" height="126" alt="image" src="https://github.com/user-attachments/assets/ccaf2abf-f0b2-4a93-bfd2-7c95cbcdefc4" />
 
 - Note that currently, no standalone contents or packaged solutions are installed
 
-![Microsoft Sentinel Content Hub. The statistics at the top indicate 342 Solutions and 273 Standalone contents available, with 0 Installed and 0 Updates.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/eec02355464674cbb50459df9e65a08b.png)
+<img width="833" height="190" alt="image" src="https://github.com/user-attachments/assets/4273d7fe-76bb-4335-8284-c375930191b2" />
 
 - Search for solution: **Microsoft Entra ID**, select it and click **Install**
 
-![User interface for selecting and installing software in Microsoft Sentinel. "Microsoft Entra ID" is highlighted as "FEATURED." The description includes provider, support, version, and a note to read release notes before installation.](https://tryhackme-images.s3.amazonaws.com/user-uploads/5efbaebdaaea011c857b438d/room-content/7ddaa2584fc741700a7448dd4da8dca6.png)
+<img width="1601" height="682" alt="image" src="https://github.com/user-attachments/assets/b245cd82-d5c0-4a22-b0f2-65231b881ce1" />
 
 ## Review the Results
 
