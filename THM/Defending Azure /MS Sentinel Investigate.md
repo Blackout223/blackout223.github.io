@@ -258,6 +258,7 @@ On a high level, these false positives can be eliminated with the following meth
 **Now, dive back into the alert logs for this incident. Which disabled account was targeted by attackers?**
 
 <img width="718" height="304" alt="image" src="https://github.com/user-attachments/assets/2c1e9ff4-c703-4ccb-ab63-432d8a73de0f" />
+
 **A: johns@m365x816222.onmicrosoft.com**
 
 **How many login attempts were there for this disabled account?**
