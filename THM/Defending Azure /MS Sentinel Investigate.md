@@ -45,6 +45,7 @@ It is also important to note that the source of alerts resulting in incidents m
 <img width="301" height="334" alt="image" src="https://github.com/user-attachments/assets/c63529c0-744a-4add-93e0-c5f1181be4bf" />
 
 **Is Microsoft Sentinel the only product contributing to incidents? (Yea/Nay)**
+
 **A: Nay**
 
 # Triage and Investigate - Ownership, Status, Tasks
@@ -173,7 +174,7 @@ Once an incident is closed, select the classification:
 | Benign Positive | Suspicious but expected
 | False Positive | Incorrect alert logic
 | False Positive | Inaccurate data|
-| Undetermined |---|
+| Undetermined | --- |
 **True Positive -** **Suspicious Activity**
 
 - The root cause was an actual threat.  
