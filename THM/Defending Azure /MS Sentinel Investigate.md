@@ -98,9 +98,11 @@ SOC analysts are tasked with a series of steps—**triaging**, **investigating
 This approach guarantees that every incident receives uniform treatment and adheres to Service Level Agreements (SLAs). With predefined steps set by SOC management or senior analysts (lvl 2/3), drawing from common security frameworks like NIST, past incident experience, or recommendations from security vendors, analysts can work efficiently without deliberating on the next steps or fearing missing critical actions.
 
 **What ensures the smooth and efficient operation of security operations (SecOps)?**
+
 **A: process standardization**
 
 **What helps to guarantee that every incident receives uniform treatment?**
+
 **A: Incident Tasks**
 
 # Triage and Investigate - Timeline, Logs, Entities, Visual
@@ -149,9 +151,11 @@ You can further deepen your investigation by hovering over each entity. This wil
 <img width="493" height="427" alt="image" src="https://github.com/user-attachments/assets/2ca1d0a1-5631-498b-b7b2-36abe9143090" />
 
 **Which link can you click to see the specific logs of an alert without leaving the context of the incident details page?**
+
 **A: Link to LA**
 
 **During graphical investigation, which queries can be utilized to deepen the investigation?**
+
 **A: Exploration**
 
 # Incident Closure - True/Benign/False Positives
@@ -164,12 +168,12 @@ Once an incident is closed, select the classification:
 
 |   |   |
 |---|---|
-|**Classification**|**Description**|
-|True Positive|Suspicious activity|
-|Benign Positive|Suspicious but expected|
-|False Positive|Incorrect alert logic|
-|False Positive|Inaccurate data|
-|Undetermined|---|
+| **Classification** | **Description**
+| True Positive | Suspicious activity
+| Benign Positive | Suspicious but expected
+| False Positive | Incorrect alert logic
+| False Positive | Inaccurate data|
+| Undetermined |---|
 **True Positive -** **Suspicious Activity**
 
 - The root cause was an actual threat.  
@@ -210,12 +214,15 @@ On a high level, these false positives can be eliminated with the following meth
     - You might get a similar incident in the future; however, for the current, you don't have enough info for a conclusion
 
 **You investigate an incident and conclude that it is due to red team activities. What is your closure classification?**
+
 **A: benign positive**
 
 **How do you eliminate a false positive without modifying the analytics rule?**
+
 **A: automation rule**
 
 **What do you classify an actual threat as?**
+
 **A: True Positive**
 
 # Lab-05: Investigate Incidents
@@ -243,12 +250,15 @@ On a high level, these false positives can be eliminated with the following meth
 **A: 175.45.176.99**
 
 **Check out this IP's geolocation. What is the city?**
+
 **A: Pyeongyang**
 
 **Now, dive back into the alert logs for this incident. Which disabled account was targeted by attackers?**
+
 <img width="718" height="304" alt="image" src="https://github.com/user-attachments/assets/2c1e9ff4-c703-4ccb-ab63-432d8a73de0f" />
-**A: johns@m365x816222.onmicrosoft.com
+**A: johns@m365x816222.onmicrosoft.com**
 
 **How many login attempts were there for this disabled account?**
+
 **A: 4**
 
