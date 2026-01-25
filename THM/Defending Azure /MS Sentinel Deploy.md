@@ -149,19 +149,22 @@ Created a LAW and added sentinel
 
 |   |   |
 |---|---|
-|**Stakeholders, SOC managers,** and more.|[**Microsoft Sentinel Reader**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-reader)|
-|**Security analysts, incident responders** (usually SOC Level-1 Analysts)|[**Microsoft Sentinel Responder**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-responder)|
-|**Security engineers, Fusion Analytics team members** (usually SOC Level-2 Analysts)<br><br>Install and manage **Solutions** using **Content Hub**<br><br>Create and delete workbooks|[**Microsoft Sentinel Contributor**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-contributor)|
-|**Automation team members** (usually SOC Level-1 Analysts)  <br>  <br>Automate responses to threats with **playbooks**|[**Microsoft Sentinel Playbook Operator**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-playbook-operator)|
+| **Stakeholders, SOC managers,** and more | [**Microsoft Sentinel Reader**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-reader)
+| **Security analysts, incident responders** (usually SOC Level-1 Analysts) | [**Microsoft Sentinel Responder**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-responder)
+| **Security engineers, Fusion Analytics team members** (usually SOC Level-2 Analysts)<br><br>Install and manage **Solutions** using **Content Hub**<br><br>Create and delete workbooks | [**Microsoft Sentinel Contributor**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-contributor)
+| **Automation team members** (usually SOC Level-1 Analysts)  <br>  <br>Automate responses to threats with **playbooks** | [**Microsoft Sentinel Playbook Operator**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-playbook-operator)
 As a best practice, try to assign these roles to the Resource Group where Microsoft Sentinel workspace resides, as there might be other resources in that resource group which support the functionality of Microsoft Sentinel.
 
 **You are an incident responder who needs to manage incidents, such as assigning and dismissing them. Which role do you need?**
+
 **A: Microsoft Sentinel Responder**
 
 **You are a security engineer, and you are tasked with enabling pre-packaged Solutions from Content Hub. Which role do you need?**
+
 **A: Microsoft Sentinel Contributor**
 
 **You are the CISO of the organization. You need visibility into Sentinel data, but you don't directly manage the Sentinel environment. Which role do you need?**
+
 **A: Microsoft Sentinel Reader**
 
 # MS Sentinel Settings
