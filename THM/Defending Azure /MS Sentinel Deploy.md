@@ -147,7 +147,7 @@ Created a LAW and added sentinel
 - **Microsoft [Sentinel Automation Contributor](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-automation-contributor)** (not for user accounts)  
     - Allows Microsoft Sentinel to add playbooks to automation rules
 
-|   |   |
+
 |---|---|
 | **Stakeholders, SOC managers,** and more | [**Microsoft Sentinel Reader**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-reader)
 | **Security analysts, incident responders** (usually SOC Level-1 Analysts) | [**Microsoft Sentinel Responder**](https://learn.microsoft.com/en-ca/azure/role-based-access-control/built-in-roles#microsoft-sentinel-responder)

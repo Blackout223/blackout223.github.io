@@ -16,10 +16,10 @@ The main goal is to reduce organizational risk. The mission statement would incl
 ## Responsibilities
 
 |---|---|
-| **Monitoring** | [SOC Level 1 Analyst](https://tryhackme.com/r/resources/blog/become-level-1-soc-analyst)
-| **Triage** | [SOC Level 1 Analyst](https://tryhackme.com/r/resources/blog/become-level-1-soc-analyst)
-| **Incident Response** | [SOC Level 2 Analyst](https://tryhackme.com/r/resources/blog/become-level-2-soc-analyst)
-| **Threat Hunting** | [SOC Level 2 Analyst](https://tryhackme.com/r/resources/blog/become-level-2-soc-analyst)
+| **Monitoring** | SOC Level 1 Analyst
+| **Triage** | SOC Level 1 Analyst
+| **Incident Response** | SOC Level 2 Analyst
+| **Threat Hunting** | SOC Level 2 Analyst
 | **Advanced Threat Hunting** | SOC Level 3 Analyst
 | **Threat Intelligence (TI) Analysis** | SOC Level 3 Analyst
 | **Vulnerability Management**| SOC Level 3 Analyst
