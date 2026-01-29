@@ -1,4 +1,7 @@
-
+---
+layout: default
+title: Azure Day 6 - Create a Subnet in Azure Virtual Network
+---
 
 # Overview
 
