@@ -10,7 +10,7 @@ Working through the 100 days of Devops on KodeKloud, which will also include AWS
 |-----------|-------------|-------------|
 | [Day 1 ](/KodeKloud/100%20Days/Devops/Day%201%20-%20Linux%20User%20Setup%20with%20Non-Interactive%20Shell) | Linux User Setup with Non-Interactive Shell
 | [Day 2 ](/KodeKloud/100%20Days/Devops/Day%202%20-%20Temporary%20User%20Setup%20with%20Expiry) | Temporary User Setup with Expiry
-| [Day 3 ](/KodeKloud/100%20Days/Devops/Day%203%20-%20Secure%20Root%20SSH%20Access.md) | Secure Root SSH Access
+| [Day 3 ](/KodeKloud/100%20Days/Devops/Day%203%20-%20Secure%20Root%20SSH%20Access) | Secure Root SSH Access
 
 # AWS
 
