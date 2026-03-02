@@ -8,7 +8,7 @@ Working through the 100 days of Devops on KodeKloud, which will also include AWS
 
 | Writeup | Description | 
 |-----------|-------------|-------------|
-| [Day 1 ](/KodeKloud/100%20Days/Devops/Day%201%20-%20Linux%20User%20Setup%20with%20Non-Interactive%20Shell) | Linux User Setup with Non-Interactive Shell
+| [Day 1 ](/KodeKloud/100%20Days/Devops/Day%201%20-%20Linux%20User%20Setup%20with%20Non-Interactive%20Shell.md) | Linux User Setup with Non-Interactive Shell
 
 # AWS
 
