@@ -2,8 +2,14 @@
 layout: default
 title: KodeKloud 100 Days 
 ---
-This is me doing 100 days of Devops on KodeKloud, which will include AWS, Azure and Linux
+Working through the 100 days of Devops on KodeKloud, which will also include AWS and Azure
 ---
+# 100 Days of Devops
+
+| Writeup | Description | 
+|-----------|-------------|-------------|
+| [Day 1 ]()
+
 # AWS
 
 | Writeup | Description | 

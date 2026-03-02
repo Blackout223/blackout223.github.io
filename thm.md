@@ -25,4 +25,5 @@ A collection of my TryHackMe room walkthroughs and challenges.
 | [MS Sentinel Detect](/THM/Defending%20Azure%20/MS%20Sentinel%20Detect) | This room showcases how MS Sentinel helps in detecting and investigating threats | Easy
 | [MS Sentinel Investiagte](/THM/Defending%20Azure%20/MS%20Sentinel%20Investigate) | Investigate and manage incidents in Microsoft Sentinel | Medium
 
+## KQL
 ---
