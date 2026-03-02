@@ -38,4 +38,5 @@ To verify the user has been created and the expiry date is set, this command can
 chage -l ravi
 ```
 ![alt text](image-7.png)
+
 We can now see that the user account has been created and will expire on Jan 28 2027

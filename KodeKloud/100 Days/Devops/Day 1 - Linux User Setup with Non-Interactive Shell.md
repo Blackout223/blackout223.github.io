@@ -27,6 +27,7 @@ Enter password
 
 We are now logged in as Tony
 ![alt text](image-1.png)
+
 Trying to run:
 `useradd -s /sbin/nologin james` - This gives a permission denied, which means tony does not have the correct permissions to create an account. We will need to escalate to root
 
