@@ -18,6 +18,7 @@ https://kodekloudhub.github.io/kodekloud-engineer/docs/projects/nautilus#infrast
 
 Looking at the link, there is only 1 user on `App Server 1` - This is `tony`
 ![alt text](image.png)
+
 We need to ssh into the `tony` user:
 `ssh tony@stapp01`
 
