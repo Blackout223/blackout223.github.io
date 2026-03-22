@@ -13,6 +13,9 @@ Working through the 100 days of Devops on KodeKloud, which will also include AWS
 | [Day 3 ](/KodeKloud/100%20Days/Devops/Day%203%20-%20Secure%20Root%20SSH%20Access) | Secure Root SSH Access
 | [Day 4 ](/KodeKloud/100%20Days/Devops/Day%204%20-%20Script%20Execution%20Permissions) | Script Execution Permissions
 | [Day 5 ](/KodeKloud/100%20Days/Devops/Day%205%20-%20%20SElinux%20Installation%20and%20Configuration) | SElinux Installation and Configuration
+| [Day 6 ](/KodeKloud/100%20Days/Devops/Day%206%20-%20Create%20a%20Cron%20Job) | Create a Cron Job
+| [Day 7 ](/KodeKloud/100%20Days/Devops/Day%207%20-%20Linux%20SSH%20Authentication) | Linux SSH Authentication
+| [Day 8 ](/KodeKloud/100%20Days/Devops/Day%208%20-%20Install%20Ansible) | Install Ansible
 
 # AWS
 
