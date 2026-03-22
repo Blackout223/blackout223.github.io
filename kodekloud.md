@@ -12,6 +12,7 @@ Working through the 100 days of Devops on KodeKloud, which will also include AWS
 | [Day 2 ](/KodeKloud/100%20Days/Devops/Day%202%20-%20Temporary%20User%20Setup%20with%20Expiry) | Temporary User Setup with Expiry
 | [Day 3 ](/KodeKloud/100%20Days/Devops/Day%203%20-%20Secure%20Root%20SSH%20Access) | Secure Root SSH Access
 | [Day 4 ](/KodeKloud/100%20Days/Devops/Day%204%20-%20Script%20Execution%20Permissions) | Script Execution Permissions
+| [Day 5 ](/KodeKloud/100%20Days/Devops/Day%205%20-%20%20SElinux%20Installation%20and%20Configuration) | SElinux Installation and Configuration
 
 # AWS
 
