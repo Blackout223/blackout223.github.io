@@ -24,8 +24,9 @@ Working through the 100 days of Devops on KodeKloud, which will also include AWS
 | [Day 1 ](/KodeKloud/100%20Days/AWS/Day%201.pdf) | Create Key Pair
 | [Day 2 ](/KodeKloud/100%20Days/AWS/Day%202.pdf) | Create Security Group
 | [Day 3 ](/KodeKloud/100%20Days/AWS/Day%203%20-%20Create%20Subnet.pdf) | Create Subnet
-
-
+| [Day 4](/KodeKloud/100%20Days/AWS/Day%204%20-%20%20Enable%20Versioning%20for%20S3%20Bucket) | Enable Versioning for S3 Bucket
+| [Day 5](/KodeKloud/100%20Days/AWS/Day%205%20-%20Create%20GP3%20Volume) | Create GP3 Volume
+| [Day 6](/KodeKloud/100%20Days/AWS/Day%206%20-%20Launch%20EC2%20Instance) | Launch EC2 Instance
 
 
 # Azure
