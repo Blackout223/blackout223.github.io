@@ -1,7 +1,6 @@
 ---
 layout: page
 title: AWS Projects
-permalink: /aws-projects/
 ---
 
 # ☁️ AWS Projects
