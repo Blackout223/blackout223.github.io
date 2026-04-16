@@ -44,7 +44,7 @@ I focus on vulnerability management, penetration testing, cloud security, and in
 **AWS Certified Cloud Practitioner**  
 *April 2025 - April 2028*
 
-**Microsoft SC-200: Security Operations Analyst**  
+**AWS: Solutions Architect Associate**  
 *In Progress*
 
 ---
@@ -70,8 +70,8 @@ Hands-on AWS projects created by myself
 
 I'm actively engaged in continuous professional development through:
 - Completing hands-on labs and CTF challenges
+- Creating Hands-on Projects
 - Pursuing industry certifications
-- Staying current with threat intelligence and security research
 -  Reading cybersecurity books
 
 ---
