@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: AWS Projects
 ---
 
@@ -7,3 +7,6 @@ title: AWS Projects
 
 This page showcases my hands-on AWS projects 
 
+| Project | 
+|-----------|
+| [Threat Detection and Automated Response Pipeline] 
