@@ -1,3 +1,8 @@
+---
+layout: default
+title: AWS Threat Detection and Automated Response Pipeline
+---
+
 # Scenario
 
 SecurePay, a fast-growing fintech startup processing over 50,000 transactions daily, has recently expanded to AWS but has no visibility into what's happening inside their cloud environment. Their security team has no way of knowing if an attacker has compromised an IAM key, if someone logged into the root account at 3am, or if an S3 bucket containing customer financial records was quietly made public. With PCI-DSS compliance requirements looming and a recent industry-wide wave of cloud credential theft, SecurePay's CTO has issued an urgent mandate: build a threat detection and automated response system before their next compliance audit. As their Cloud Security Engineer, you'll build the system from scratch using AWS-native services.
