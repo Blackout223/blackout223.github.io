@@ -43,9 +43,9 @@ CloudTrail, GuardDuty, EventBridge, Lambda, SNS, Security Hub
 
 ---
 
-## Learning log
+## Hands-on practice
 
-Guided labs and challenge write-ups, kept for reference.
+Labs, challenges and guided projects I have worked through, with my write-ups.
 
 - [TryHackMe write-ups](thm)
 - [KodeKloud 100 Days of DevOps](kodekloud)
