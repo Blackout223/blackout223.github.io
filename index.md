@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Blackout | Cloud Security
-description: AWS detection and incident response
+title: Blackout | Cloud Security Portfolio
+description: Projects and write-ups in AWS detection, incident response and container security
 ---
 
-# Blackout: AWS detection and incident response
+## About me
 
 I'm a Technical Support Representative at TryHackMe. Part of my role is investigating AWS abuse alerts using CloudTrail, VPC Flow Logs and Elastic SIEM, and I lead the company's bug bounty programme. Before that I spent five years in IT support and security operations in regulated financial-sector environments, working with Microsoft 365, Entra ID, Intune, EDR rollouts, Cyber Essentials Plus and ISO 27001.
 
