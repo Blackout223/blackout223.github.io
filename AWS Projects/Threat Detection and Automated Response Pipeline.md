@@ -401,7 +401,46 @@ Checking Lambda logs in my `/aws/lambda/SecurePay-AutoRemediation` log group. La
 <img width="2267" height="1117" alt="image" src="https://github.com/user-attachments/assets/6b5b6c13-570e-482f-8bab-7ce45b49ee94" />
 <img width="2254" height="1014" alt="image" src="https://github.com/user-attachments/assets/725614cc-1fe4-4047-a34e-5e8d3b8884c9" />
 
+# What I'd change
+
+Looking back at this build, these are the gaps I'd fix before trusting it in a real account.
+
+**The Lambda role has far too much access.** I attached `IAMFullAccess` to get it working. If that function were ever compromised, the attacker would get full control of IAM. The function only needs to deactivate keys and send one SNS message, so the role should be scoped to exactly that (plus `AWSLambdaBasicExecutionRole` for its own logs):
+
+```JSON
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "iam:UpdateAccessKey",
+            "Resource": "arn:aws:iam::ACCOUNT_ID:user/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "sns:Publish",
+            "Resource": "arn:aws:sns:eu-west-2:ACCOUNT_ID:SecurePaySecurityAlerts"
+        }
+    ]
+}
+```
+
+**The IAM metric filter misses common privilege escalation calls.** It catches inline policy changes but not `AttachUserPolicy`, `AttachRolePolicy`, `AttachGroupPolicy`, the matching `Detach` calls, or `CreatePolicyVersion` and `SetDefaultPolicyVersion`. Attaching `AdministratorAccess` to a user would have gone unnoticed. The CIS AWS Foundations Benchmark has a fuller filter I should have started from.
+
+**Other detections I'd add:**
+- `RevokeSecurityGroupIngress` and `RevokeSecurityGroupEgress` in the security group filter
+- `CreateAccessKey`, a common persistence step after a key is stolen
+- `StopLogging` and `DeleteTrail`, because an attacker turning off CloudTrail is one of the strongest signals there is
+
+**The audit trail isn't tamper-evident yet.** I didn't enable CloudTrail log file validation, KMS encryption on the log bucket, or S3 Object Lock. Without those, someone with enough access could alter or delete the logs.
+
+**The Lambda needs hardening.** The account ID and SNS topic ARN are hardcoded and should be environment variables. The function should also handle findings where the access key no longer exists, so it doesn't fail on sample findings or keys that were already rotated.
+
+**It was built by clicking through the console.** That makes it hard to review, repeat or tear down cleanly. The next version will be written in Terraform, with security scanning in a CI pipeline before anything is deployed.
+
+**Teardown:** I deleted every resource the same day I finished testing, to avoid ongoing costs and to keep a deliberately public test bucket from sitting in the account.
+
 # Conclusion
 
-SecurePay had zero visibility into their AWS environment. An attacker could have stolen an IAM access key, logged into the console from a foreign country, exfiltrated customer financial data from S3, and opened backdoor ports on EC2 instances and the security team would have had no idea until a customer or regulator flagged it. I built a layered detection system that catches these exact threats in real time, automatically contains the most critical ones within seconds, and maintains a complete tamper-evident audit trail that satisfies compliance requirements. The difference between this and no monitoring is the difference between discovering a breach in 4 minutes versus 4 months.
+SecurePay had zero visibility into their AWS environment. An attacker could have stolen an IAM access key, logged into the console from a foreign country, exfiltrated customer financial data from S3, and opened backdoor ports on EC2 instances and the security team would have had no idea until a customer or regulator flagged it. I built a layered detection system that catches these exact threats in real time, automatically contains the most critical ones within seconds, and keeps a full record of API activity in S3. The difference between this and no monitoring is the difference between discovering a breach in 4 minutes versus 4 months.
 
