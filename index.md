@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Blackout | Cloud Security Portfolio
-description: Projects and write-ups in AWS detection, incident response and container security
+title: Blackout | Cybersecurity/Cloud Security Portfolio
+description: Five years in IT support and security operations, now building towards a Cloud Security Engineer role
 ---
 
 ## About me
