@@ -14,7 +14,7 @@ A fully automated cloud threat detection and incident response pipeline using AW
 # Architecture Diagram
 
 Below is an architecture diagram on how I am going to solve the problem
-<img width="1440" height="1228" alt="image" src="https://github.com/user-attachments/assets/acee3270-670b-4c33-92c6-f504f5447e03" />
+<a href="https://github.com/user-attachments/assets/acee3270-670b-4c33-92c6-f504f5447e03" target="_blank" rel="noopener"><img width="1440" height="1228" alt="image" src="https://github.com/user-attachments/assets/acee3270-670b-4c33-92c6-f504f5447e03" /></a>
 
 # Enable CloudTrail with S3 logging and CloudWatch Integration
 
@@ -22,8 +22,8 @@ CloudTrail is the foundation of everything that follows. It records every API ca
 
 I created an S3 bucket for log storage with versioning enabled 
 `S3 -> Create bucket`
-<img width="1533" height="1054" alt="image" src="https://github.com/user-attachments/assets/d840fea2-0335-41ef-aa17-1a4442e78455" />
-<img width="1571" height="924" alt="image" src="https://github.com/user-attachments/assets/43aa95db-d79f-4686-bfca-f157288f4457" />
+<a href="https://github.com/user-attachments/assets/d840fea2-0335-41ef-aa17-1a4442e78455" target="_blank" rel="noopener"><img width="1533" height="1054" alt="image" src="https://github.com/user-attachments/assets/d840fea2-0335-41ef-aa17-1a4442e78455" /></a>
+<a href="https://github.com/user-attachments/assets/43aa95db-d79f-4686-bfca-f157288f4457" target="_blank" rel="noopener"><img width="1571" height="924" alt="image" src="https://github.com/user-attachments/assets/43aa95db-d79f-4686-bfca-f157288f4457" /></a>
 
 Once my bucket was created I needed to add a bucket policy so that CloudTrail will have the correct permissions to write logs into the bucket. To do this I went into my created bucket > permissions > Bucket policy
 ```JSON
@@ -56,19 +56,19 @@ Once my bucket was created I needed to add a bucket policy so that CloudTrail wi
     ]
 }
 ```
-<img width="1464" height="799" alt="image" src="https://github.com/user-attachments/assets/514412bf-ca9e-4a24-9089-e5b3907f8a60" />
+<a href="https://github.com/user-attachments/assets/514412bf-ca9e-4a24-9089-e5b3907f8a60" target="_blank" rel="noopener"><img width="1464" height="799" alt="image" src="https://github.com/user-attachments/assets/514412bf-ca9e-4a24-9089-e5b3907f8a60" /></a>
 
 The bucket and policy has now successfully been created. 
 
 Next step is to setup a CloudWatch Log Group for CloudTrail
 `Cloudwatch > Log Management > Create Log Group`
-<img width="875" height="864" alt="image" src="https://github.com/user-attachments/assets/eac43bdf-431a-45a1-bb8a-b2ab68c0c21a" />
+<a href="https://github.com/user-attachments/assets/eac43bdf-431a-45a1-bb8a-b2ab68c0c21a" target="_blank" rel="noopener"><img width="875" height="864" alt="image" src="https://github.com/user-attachments/assets/eac43bdf-431a-45a1-bb8a-b2ab68c0c21a" /></a>
 
 Once the log group has been created, the trail needs to be setup
 `CloudTrail > Trails > Create Trail`
 
 As the bucket has already been created I used the existing S3 bucket option.
-<img width="1421" height="821" alt="image" src="https://github.com/user-attachments/assets/b85c2850-455b-400d-9fcd-12771b52b7ea" />
+<a href="https://github.com/user-attachments/assets/b85c2850-455b-400d-9fcd-12771b52b7ea" target="_blank" rel="noopener"><img width="1421" height="821" alt="image" src="https://github.com/user-attachments/assets/b85c2850-455b-400d-9fcd-12771b52b7ea" /></a>
 
 On the optional settings I enabled CloudWatch Logs with the existing log group name and create a new IAM role
 - Log group name - `/aws/cloudtrail/securepay-trail`
@@ -78,14 +78,14 @@ On the log events page after the trail attributes have been completed. I chose t
 - Management events 
 - Data events - Resource type with S3 and log all events
 - Insights events - enabled API call/error rate 
-<img width="1351" height="1136" alt="image" src="https://github.com/user-attachments/assets/2382dbf8-fe9b-4fb8-ae37-7a8867af4222" />
-<img width="1395" height="436" alt="image" src="https://github.com/user-attachments/assets/dfc2de6b-a6b9-48c9-8e6a-01c67b3e36b6" />
+<a href="https://github.com/user-attachments/assets/2382dbf8-fe9b-4fb8-ae37-7a8867af4222" target="_blank" rel="noopener"><img width="1351" height="1136" alt="image" src="https://github.com/user-attachments/assets/2382dbf8-fe9b-4fb8-ae37-7a8867af4222" /></a>
+<a href="https://github.com/user-attachments/assets/dfc2de6b-a6b9-48c9-8e6a-01c67b3e36b6" target="_blank" rel="noopener"><img width="1395" height="436" alt="image" src="https://github.com/user-attachments/assets/dfc2de6b-a6b9-48c9-8e6a-01c67b3e36b6" /></a>
 
 The trail is successfully set up
-<img width="2515" height="311" alt="image" src="https://github.com/user-attachments/assets/6b4ef706-3605-47e2-b025-1e66bf98ec19" />
+<a href="https://github.com/user-attachments/assets/6b4ef706-3605-47e2-b025-1e66bf98ec19" target="_blank" rel="noopener"><img width="2515" height="311" alt="image" src="https://github.com/user-attachments/assets/6b4ef706-3605-47e2-b025-1e66bf98ec19" /></a>
 
 After a few minutes, log files will start appearing under the bucket
-<img width="2218" height="414" alt="image" src="https://github.com/user-attachments/assets/dce61a7d-0449-41a5-9ff1-38bfe557ba82" />
+<a href="https://github.com/user-attachments/assets/dce61a7d-0449-41a5-9ff1-38bfe557ba82" target="_blank" rel="noopener"><img width="2218" height="414" alt="image" src="https://github.com/user-attachments/assets/dce61a7d-0449-41a5-9ff1-38bfe557ba82" /></a>
 
 # Enabling Amazon GuardDuty
 
@@ -110,7 +110,7 @@ I created a file called `threat-ips.txt` with IPs:
 ```
 
 With this file I uploaded it to the S3 bucket that was created earlier and head back to GuardDuty to create the threat IP list
-<img width="593" height="513" alt="image" src="https://github.com/user-attachments/assets/6be91cd9-ccf7-4476-a017-81d25bc0978a" />
+<a href="https://github.com/user-attachments/assets/6be91cd9-ccf7-4476-a017-81d25bc0978a" target="_blank" rel="noopener"><img width="593" height="513" alt="image" src="https://github.com/user-attachments/assets/6be91cd9-ccf7-4476-a017-81d25bc0978a" /></a>
 
 GuardDuty will start cross-referencing all incoming traffic and API calls against those IPs immediately.
 
@@ -123,10 +123,10 @@ SNS was chosen for this pipeline because of its pub/sub architecture, meaning a 
 When a GuardDuty finding triggers, the SNS email will contain the raw EventBridge event JSON. It's verbose but includes all the information you need: the finding type, the affected resource (IAM user, EC2 instance, or S3 bucket), the severity, the source IP address, and the time.
 
 I will be creating a topic called `SecurePaySecurityAlerts` - Which will be used with my CloudWatch Alarms
-<img width="1581" height="1149" alt="image" src="https://github.com/user-attachments/assets/6d664437-2550-4266-8028-ff6966f19f84" />
+<a href="https://github.com/user-attachments/assets/6d664437-2550-4266-8028-ff6966f19f84" target="_blank" rel="noopener"><img width="1581" height="1149" alt="image" src="https://github.com/user-attachments/assets/6d664437-2550-4266-8028-ff6966f19f84" /></a>
 
 Once the topic has been created. I set up the subscription to send any notifications to my email
-<img width="1526" height="630" alt="image" src="https://github.com/user-attachments/assets/934e3716-48f2-45f1-bc9e-6b0c8db5dc48" />
+<a href="https://github.com/user-attachments/assets/934e3716-48f2-45f1-bc9e-6b0c8db5dc48" target="_blank" rel="noopener"><img width="1526" height="630" alt="image" src="https://github.com/user-attachments/assets/934e3716-48f2-45f1-bc9e-6b0c8db5dc48" /></a>
 
 SNS has now fully been set up. Next step is to create the metric filters and alarms in CloudWatch
 
@@ -190,7 +190,7 @@ aws logs put-metric-filter \
     metricName=SecurityGroupChangeCount,metricNamespace=SecurePaySecurityMetrics,metricValue=1,defaultValue=0 \
   --region eu-west-2
 ```
-<img width="2289" height="1149" alt="image" src="https://github.com/user-attachments/assets/daa83b0d-4689-410b-971e-76dff3159411" />
+<a href="https://github.com/user-attachments/assets/daa83b0d-4689-410b-971e-76dff3159411" target="_blank" rel="noopener"><img width="2289" height="1149" alt="image" src="https://github.com/user-attachments/assets/daa83b0d-4689-410b-971e-76dff3159411" /></a>
 
 Now that the metric filters have been set up. Alarms need to be created for each metric by selecting the metric in CloudWatch > Create Alarm 
 
@@ -206,7 +206,7 @@ For the others:
 - `IAMPolicyChanges` > alarm name `HIGH-IAMPolicyChange`
 - `S3BucketPolicyChanges` > alarm name `HIGH-S3BucketPolicyChange`
 - `SecurityGroupChanges` > alarm name `MEDIUM-SecurityGroupChange`
-<img width="708" height="368" alt="image" src="https://github.com/user-attachments/assets/76bb76e7-0df1-4d46-8a4d-f2a05cfadc5c" />
+<a href="https://github.com/user-attachments/assets/76bb76e7-0df1-4d46-8a4d-f2a05cfadc5c" target="_blank" rel="noopener"><img width="708" height="368" alt="image" src="https://github.com/user-attachments/assets/76bb76e7-0df1-4d46-8a4d-f2a05cfadc5c" /></a>
 
 # Configuring EventBridge to route GuardDuty Findings
 
@@ -230,7 +230,7 @@ This is the event pattern that will be used:
   }
 }
 ```
-<img width="2182" height="770" alt="image" src="https://github.com/user-attachments/assets/15c790c4-4c73-49d0-9293-0654d92cbaa9" />
+<a href="https://github.com/user-attachments/assets/15c790c4-4c73-49d0-9293-0654d92cbaa9" target="_blank" rel="noopener"><img width="2182" height="770" alt="image" src="https://github.com/user-attachments/assets/15c790c4-4c73-49d0-9293-0654d92cbaa9" /></a>
 
 Next is to create the medium severity response. Which is the same exact steps but using a different event pattern
 ```JSON
@@ -258,7 +258,7 @@ I created the Lambda execution role
 - `IAMFullAccess` - For Lambda to deactivate IAM keys
 - `AWSLambdaBasicExecutionRole` - For Lambda to write its own logs to CloudWatch
 - **Role name:** `SecurePay-Lambda-RemediationRole`
-<img width="1747" height="874" alt="image" src="https://github.com/user-attachments/assets/10e3960a-ee07-4f09-9620-847d73c37f2c" />
+<a href="https://github.com/user-attachments/assets/10e3960a-ee07-4f09-9620-847d73c37f2c" target="_blank" rel="noopener"><img width="1747" height="874" alt="image" src="https://github.com/user-attachments/assets/10e3960a-ee07-4f09-9620-847d73c37f2c" /></a>
 
 After the IAM Role was created. I created the Lambda auto-remediation function (Lambda > Create Function) with the help of Claude creating the function
 
@@ -330,20 +330,20 @@ def lambda_handler(event, context):
 
     return {"status": "complete"}
 ```
-<img width="1503" height="1084" alt="image" src="https://github.com/user-attachments/assets/0d0c6a55-b96d-4e2f-8238-1107bbc61983" />
+<a href="https://github.com/user-attachments/assets/0d0c6a55-b96d-4e2f-8238-1107bbc61983" target="_blank" rel="noopener"><img width="1503" height="1084" alt="image" src="https://github.com/user-attachments/assets/0d0c6a55-b96d-4e2f-8238-1107bbc61983" /></a>
 
 By default Lambda functions timeout after 3 seconds. IAM API calls can occasionally take longer. I updated this to 30 seconds
-<img width="1507" height="235" alt="image" src="https://github.com/user-attachments/assets/b99ae729-6502-4341-b55a-5509a9ae78fb" />
+<a href="https://github.com/user-attachments/assets/b99ae729-6502-4341-b55a-5509a9ae78fb" target="_blank" rel="noopener"><img width="1507" height="235" alt="image" src="https://github.com/user-attachments/assets/b99ae729-6502-4341-b55a-5509a9ae78fb" /></a>
 
 Next I headed back to EventBridge and added the Lambda function to the targets
-<img width="2177" height="421" alt="image" src="https://github.com/user-attachments/assets/f9b80a89-9e9d-4401-9db2-c337d3983599" />
+<a href="https://github.com/user-attachments/assets/f9b80a89-9e9d-4401-9db2-c337d3983599" target="_blank" rel="noopener"><img width="2177" height="421" alt="image" src="https://github.com/user-attachments/assets/f9b80a89-9e9d-4401-9db2-c337d3983599" /></a>
 
 # Enabling AWS Security Hub
 
 Security Hub aggregates findings from GuardDuty, CloudWatch, and other security tools into one dashboard, and scores your account against security standards like CIS AWS Foundations Benchmark and AWS Foundational Security Best Practices.
 
 Security Hub can take up to 15–30 minutes to run its first assessment.
-<img width="784" height="535" alt="image" src="https://github.com/user-attachments/assets/e0013529-6977-46c2-a74c-cbf25afb4782" />
+<a href="https://github.com/user-attachments/assets/e0013529-6977-46c2-a74c-cbf25afb4782" target="_blank" rel="noopener"><img width="784" height="535" alt="image" src="https://github.com/user-attachments/assets/e0013529-6977-46c2-a74c-cbf25afb4782" /></a>
 # Simulating attack scenarios and verifying detection
 
 I will be creating 4 simulation attacks:
@@ -362,17 +362,17 @@ I created a test IAM user with console access but no MFA configured.
 - **Console access:** Enable, set a password
 - **Permissions:** Attach `ReadOnlyAccess`
 - **MFA:** Do not configure MFA
-<img width="1721" height="246" alt="image" src="https://github.com/user-attachments/assets/5fcf1df0-07a4-4e71-82f5-20f61451773f" />
+<a href="https://github.com/user-attachments/assets/5fcf1df0-07a4-4e71-82f5-20f61451773f" target="_blank" rel="noopener"><img width="1721" height="246" alt="image" src="https://github.com/user-attachments/assets/5fcf1df0-07a4-4e71-82f5-20f61451773f" /></a>
 
 I opened an incognito tab and signed into the IAM user I had just created.
 
 After 5 minutes my CloudWatch Alarm had gone into `In Alarm` state
-<img width="1970" height="407" alt="image" src="https://github.com/user-attachments/assets/2de5c540-fb40-493c-bbc9-347a6bf1361d" />
+<a href="https://github.com/user-attachments/assets/2de5c540-fb40-493c-bbc9-347a6bf1361d" target="_blank" rel="noopener"><img width="1970" height="407" alt="image" src="https://github.com/user-attachments/assets/2de5c540-fb40-493c-bbc9-347a6bf1361d" /></a>
 
 ### Root Account Login
 
 Within 5 minutes, the `CRITICAL-RootAccountUsage` CloudWatch alarm went off when logging into root
-<img width="1972" height="443" alt="image" src="https://github.com/user-attachments/assets/3bb71939-5999-4fc8-b74a-35f194eb5e41" />
+<a href="https://github.com/user-attachments/assets/3bb71939-5999-4fc8-b74a-35f194eb5e41" target="_blank" rel="noopener"><img width="1972" height="443" alt="image" src="https://github.com/user-attachments/assets/3bb71939-5999-4fc8-b74a-35f194eb5e41" /></a>
 
 ### S3 Bucket Made Public
 
@@ -384,10 +384,10 @@ aws s3api delete-public-access-block \
 --bucket securepay-test-public-bucket \ 
 --region eu-west-2
 ```
-<img width="2145" height="739" alt="image" src="https://github.com/user-attachments/assets/2dfcd634-bd63-4ae7-af8a-baae45e79c95" />
+<a href="https://github.com/user-attachments/assets/2dfcd634-bd63-4ae7-af8a-baae45e79c95" target="_blank" rel="noopener"><img width="2145" height="739" alt="image" src="https://github.com/user-attachments/assets/2dfcd634-bd63-4ae7-af8a-baae45e79c95" /></a>
 
 Within minutes, GuardDuty should generate a `Policy:S3/BucketPublicAccessGranted` finding - Which is rated a Low. This is also set off my CloudWatch Alarm
-<img width="1153" height="515" alt="image" src="https://github.com/user-attachments/assets/170b9c18-7769-41d1-80a0-973ff2082a45" />
+<a href="https://github.com/user-attachments/assets/170b9c18-7769-41d1-80a0-973ff2082a45" target="_blank" rel="noopener"><img width="1153" height="515" alt="image" src="https://github.com/user-attachments/assets/170b9c18-7769-41d1-80a0-973ff2082a45" /></a>
 
 ### GuardDuty Sample Findings
 
@@ -395,11 +395,11 @@ GuardDuty has a built-in sample findings generator that lets you test your entir
 `GuardDuty > Settings > Generate sample findings > Generate`
 
 This creates one sample finding for every finding type GuardDuty can detect over 100 findings covering IAM credential theft, EC2 cryptocurrency mining, S3 data exfiltration, and more. They will start with `[SAMPLE]` in the title to show they are test data
-<img width="1759" height="1058" alt="image" src="https://github.com/user-attachments/assets/5f272adf-7914-40ee-b259-86291ef01b67" />
+<a href="https://github.com/user-attachments/assets/5f272adf-7914-40ee-b259-86291ef01b67" target="_blank" rel="noopener"><img width="1759" height="1058" alt="image" src="https://github.com/user-attachments/assets/5f272adf-7914-40ee-b259-86291ef01b67" /></a>
 
 Checking Lambda logs in my `/aws/lambda/SecurePay-AutoRemediation` log group. Lambda was executed 10 times for the high vulnerabilities that GuardDuty had generated with the samples 
-<img width="2267" height="1117" alt="image" src="https://github.com/user-attachments/assets/6b5b6c13-570e-482f-8bab-7ce45b49ee94" />
-<img width="2254" height="1014" alt="image" src="https://github.com/user-attachments/assets/725614cc-1fe4-4047-a34e-5e8d3b8884c9" />
+<a href="https://github.com/user-attachments/assets/6b5b6c13-570e-482f-8bab-7ce45b49ee94" target="_blank" rel="noopener"><img width="2267" height="1117" alt="image" src="https://github.com/user-attachments/assets/6b5b6c13-570e-482f-8bab-7ce45b49ee94" /></a>
+<a href="https://github.com/user-attachments/assets/725614cc-1fe4-4047-a34e-5e8d3b8884c9" target="_blank" rel="noopener"><img width="2254" height="1014" alt="image" src="https://github.com/user-attachments/assets/725614cc-1fe4-4047-a34e-5e8d3b8884c9" /></a>
 
 # What I'd change
 

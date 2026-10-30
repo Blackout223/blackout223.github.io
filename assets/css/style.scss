@@ -16,3 +16,17 @@
   user-select: auto;
   outline: none;
 }
+
+/* Screenshots: keep the aspect ratio when the theme shrinks them to fit */
+.main-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+}
+
+.main-content a > img {
+  cursor: zoom-in;
+}
