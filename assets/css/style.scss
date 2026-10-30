@@ -30,3 +30,10 @@
 .main-content a > img {
   cursor: zoom-in;
 }
+
+/* Give screenshots more room on larger screens */
+@media screen and (min-width: 64em) {
+  .main-content {
+    max-width: 72rem;
+  }
+}
