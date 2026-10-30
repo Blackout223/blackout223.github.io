@@ -3,6 +3,8 @@ layout: default
 title: Road - TryHackMe Writeup
 ---
 
+[← Back to TryHackMe write-ups](/thm)
+
 # Road
 
 **Difficulty:** Medium  

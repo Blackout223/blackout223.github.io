@@ -3,6 +3,8 @@ layout: default
 title: KQL (Kusto) - Introduction
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # KQL (Kusto): Introduction
 
 *Room questions are in bold under each section. Answers are blurred: hover over or tap one to see it.*

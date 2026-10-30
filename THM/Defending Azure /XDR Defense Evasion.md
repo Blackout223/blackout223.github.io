@@ -3,6 +3,8 @@ layout: default
 title: Microsoft Defender XDR - Defense Evasion
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # Microsoft Defender XDR: Defense Evasion
 
 *Room questions are in bold under each section. Answers are blurred: hover over or tap one to see it.*

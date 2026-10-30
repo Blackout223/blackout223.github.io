@@ -3,6 +3,8 @@ layout: default
 title: MS Sentinel - Deploy
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # MS Sentinel: Deploy
 
 Setting up Sentinel for the first time, and the decisions you need to make before you do.

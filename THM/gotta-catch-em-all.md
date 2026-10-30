@@ -3,6 +3,8 @@ layout: default
 title: Gotta Catch'em All - TryHackMe Writeup
 ---
 
+[← Back to TryHackMe write-ups](/thm)
+
 # Gotta Catch'em All
 
 **Difficulty:** Easy  

@@ -3,6 +3,8 @@ layout: default
 title: MS Sentinel - Ingest Data
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # MS Sentinel: Ingest Data
 
 Getting logs into Sentinel. Without data there's nothing to detect on.

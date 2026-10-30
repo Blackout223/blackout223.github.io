@@ -3,6 +3,8 @@ layout: default
 title: MS Sentinel - Detect
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # MS Sentinel: Detect
 
 With logs coming in, the next step is analytics rules. These run queries against the data and raise alerts when something matches. Alerts are then grouped into incidents for analysts to work on.

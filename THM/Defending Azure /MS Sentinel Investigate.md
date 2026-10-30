@@ -3,6 +3,8 @@ layout: default
 title: MS Sentinel - Investigate
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # MS Sentinel: Investigate
 
 Working incidents as an L1 analyst: taking ownership, investigating, and closing or escalating.

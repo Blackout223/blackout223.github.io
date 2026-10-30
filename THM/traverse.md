@@ -3,6 +3,8 @@ layout: default
 title: Traverse - TryHackMe Writeup
 ---
 
+[← Back to TryHackMe write-ups](/thm)
+
 # Traverse
 
 **Difficulty:** Easy  

@@ -3,6 +3,8 @@ layout: default
 title: KQL (Kusto) - Basic Queries
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # KQL (Kusto): Basic Queries
 
 *Room questions are in bold under each section. Answers are blurred: hover over or tap one to see it.*

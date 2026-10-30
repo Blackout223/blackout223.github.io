@@ -3,6 +3,8 @@ layout: default
 title: MS Sentinel - Introduction
 ---
 
+[← Back to Defending Azure](/THM/defending-azure)
+
 # MS Sentinel: Introduction
 
 First room in the Defending Azure path. No lab in this one, it's the background for the rest of the Sentinel rooms, so these are my notes.
