@@ -343,7 +343,7 @@ Next I headed back to EventBridge and added the Lambda function to the targets
 Security Hub aggregates findings from GuardDuty, CloudWatch, and other security tools into one dashboard, and scores your account against security standards like CIS AWS Foundations Benchmark and AWS Foundational Security Best Practices.
 
 Security Hub can take up to 15–30 minutes to run its first assessment.
-<a href="https://github.com/user-attachments/assets/e0013529-6977-46c2-a74c-cbf25afb4782" target="_blank" rel="noopener"><img width="784" height="535" alt="image" src="https://github.com/user-attachments/assets/e0013529-6977-46c2-a74c-cbf25afb4782" /></a>
+<a href="/AWS%20Projects/images/threat-detection/security-hub.png" target="_blank" rel="noopener"><img alt="Security Hub security standards" src="/AWS%20Projects/images/threat-detection/security-hub.png" /></a>
 # Simulating attack scenarios and verifying detection
 
 I will be creating 4 simulation attacks:
@@ -367,12 +367,12 @@ I created a test IAM user with console access but no MFA configured.
 I opened an incognito tab and signed into the IAM user I had just created.
 
 After 5 minutes my CloudWatch Alarm had gone into `In Alarm` state
-<a href="https://github.com/user-attachments/assets/2de5c540-fb40-493c-bbc9-347a6bf1361d" target="_blank" rel="noopener"><img width="1970" height="407" alt="image" src="https://github.com/user-attachments/assets/2de5c540-fb40-493c-bbc9-347a6bf1361d" /></a>
+<a href="/AWS%20Projects/images/threat-detection/alarm-no-mfa.png" target="_blank" rel="noopener"><img alt="HIGH-ConsoleLoginWithoutMFA alarm in alarm state" src="/AWS%20Projects/images/threat-detection/alarm-no-mfa.png" /></a>
 
 ### Root Account Login
 
 Within 5 minutes, the `CRITICAL-RootAccountUsage` CloudWatch alarm went off when logging into root
-<a href="https://github.com/user-attachments/assets/3bb71939-5999-4fc8-b74a-35f194eb5e41" target="_blank" rel="noopener"><img width="1972" height="443" alt="image" src="https://github.com/user-attachments/assets/3bb71939-5999-4fc8-b74a-35f194eb5e41" /></a>
+<a href="/AWS%20Projects/images/threat-detection/alarm-root.png" target="_blank" rel="noopener"><img alt="CRITICAL-RootAccountUsage alarm in alarm state" src="/AWS%20Projects/images/threat-detection/alarm-root.png" /></a>
 
 ### S3 Bucket Made Public
 
@@ -384,10 +384,10 @@ aws s3api delete-public-access-block \
 --bucket securepay-test-public-bucket \ 
 --region eu-west-2
 ```
-<a href="https://github.com/user-attachments/assets/2dfcd634-bd63-4ae7-af8a-baae45e79c95" target="_blank" rel="noopener"><img width="2145" height="739" alt="image" src="https://github.com/user-attachments/assets/2dfcd634-bd63-4ae7-af8a-baae45e79c95" /></a>
+<a href="/AWS%20Projects/images/threat-detection/public-bucket.png" target="_blank" rel="noopener"><img alt="Creating a test bucket and removing its public access block" src="/AWS%20Projects/images/threat-detection/public-bucket.png" /></a>
 
-Within minutes, GuardDuty should generate a `Policy:S3/BucketPublicAccessGranted` finding - Which is rated a Low. This is also set off my CloudWatch Alarm
-<a href="https://github.com/user-attachments/assets/170b9c18-7769-41d1-80a0-973ff2082a45" target="_blank" rel="noopener"><img width="1153" height="515" alt="image" src="https://github.com/user-attachments/assets/170b9c18-7769-41d1-80a0-973ff2082a45" /></a>
+Within minutes, GuardDuty generated a `Policy:S3/BucketBlockPublicAccessDisabled` finding, rated Low. It also set off my CloudWatch alarm
+<a href="/AWS%20Projects/images/threat-detection/guardduty-public-bucket.png" target="_blank" rel="noopener"><img alt="GuardDuty finding for S3 Block Public Access being disabled" src="/AWS%20Projects/images/threat-detection/guardduty-public-bucket.png" /></a>
 
 ### GuardDuty Sample Findings
 
@@ -395,11 +395,11 @@ GuardDuty has a built-in sample findings generator that lets you test your entir
 `GuardDuty > Settings > Generate sample findings > Generate`
 
 This creates one sample finding for every finding type GuardDuty can detect over 100 findings covering IAM credential theft, EC2 cryptocurrency mining, S3 data exfiltration, and more. They will start with `[SAMPLE]` in the title to show they are test data
-<a href="https://github.com/user-attachments/assets/5f272adf-7914-40ee-b259-86291ef01b67" target="_blank" rel="noopener"><img width="1759" height="1058" alt="image" src="https://github.com/user-attachments/assets/5f272adf-7914-40ee-b259-86291ef01b67" /></a>
+<a href="/AWS%20Projects/images/threat-detection/guardduty-samples.png" target="_blank" rel="noopener"><img alt="GuardDuty sample findings" src="/AWS%20Projects/images/threat-detection/guardduty-samples.png" /></a>
 
-Checking Lambda logs in my `/aws/lambda/SecurePay-AutoRemediation` log group. Lambda was executed 10 times for the high vulnerabilities that GuardDuty had generated with the samples 
-<a href="https://github.com/user-attachments/assets/6b5b6c13-570e-482f-8bab-7ce45b49ee94" target="_blank" rel="noopener"><img width="2267" height="1117" alt="image" src="https://github.com/user-attachments/assets/6b5b6c13-570e-482f-8bab-7ce45b49ee94" /></a>
-<a href="https://github.com/user-attachments/assets/725614cc-1fe4-4047-a34e-5e8d3b8884c9" target="_blank" rel="noopener"><img width="2254" height="1014" alt="image" src="https://github.com/user-attachments/assets/725614cc-1fe4-4047-a34e-5e8d3b8884c9" /></a>
+Checking Lambda logs in my `/aws/lambda/SecurePay-AutoRemediation` log group. Lambda was executed 10 times for the high severity sample findings. The logs show `no auto-remediation taken` each time: sample findings don't contain a real access key, so the function correctly did nothing. It proves EventBridge is triggering the function, but the key deactivation itself would still need testing with a real key on a test user 
+<a href="/AWS%20Projects/images/threat-detection/lambda-log-group.png" target="_blank" rel="noopener"><img alt="Lambda log group with one log stream per invocation" src="/AWS%20Projects/images/threat-detection/lambda-log-group.png" /></a>
+<a href="/AWS%20Projects/images/threat-detection/lambda-logs.png" target="_blank" rel="noopener"><img alt="Lambda logs for the sample findings" src="/AWS%20Projects/images/threat-detection/lambda-logs.png" /></a>
 
 # What I'd change
 
