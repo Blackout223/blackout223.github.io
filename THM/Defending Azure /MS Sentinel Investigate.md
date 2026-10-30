@@ -81,3 +81,64 @@ In the alert logs I found which disabled account was being targeted and how many
 <img alt="Alert logs" src="https://github.com/user-attachments/assets/2c1e9ff4-c703-4ccb-ab63-432d8a73de0f" />
 
 Sign-in attempts against a disabled account are a good signal. Nobody legitimate should be logging into an account that's been switched off, so it usually means someone is trying old or leaked credentials. Next steps would be checking whether the same IP tried any active accounts, and escalating to L2 if it had.
+
+## Room questions
+
+Answers are blurred. Hover over or tap an answer to see it.
+
+### Events/Alerts/Incidents
+
+**What is a normal activity that happens at a point in time, neither good nor bad called?**  
+<span class="spoiler" tabindex="0">Event</span>
+
+**What is a negative event that disrupts normal operations and requires investigation called?**  
+<span class="spoiler" tabindex="0">Incident</span>
+
+### Incidents Overview
+
+**Is Microsoft Sentinel the only product contributing to incidents? (Yea/Nay)**  
+<span class="spoiler" tabindex="0">Nay</span>
+
+### Triage and Investigate - Ownership, Status, Tasks
+
+**What ensures the smooth and efficient operation of security operations (SecOps)?**  
+<span class="spoiler" tabindex="0">process standardization</span>
+
+**What helps to guarantee that every incident receives uniform treatment?**  
+<span class="spoiler" tabindex="0">Incident Tasks</span>
+
+### Triage and Investigate - Timeline, Logs, Entities, Visual
+
+**Which link can you click to see the specific logs of an alert without leaving the context of the incident details page?**  
+<span class="spoiler" tabindex="0">Link to LA</span>
+
+**During graphical investigation, which queries can be utilized to deepen the investigation?**  
+<span class="spoiler" tabindex="0">Exploration</span>
+
+### Closing Incidents
+
+**You investigate an incident and conclude that it is due to red team activities. What is your closure classification?**  
+<span class="spoiler" tabindex="0">benign positive</span>
+
+**How do you eliminate a false positive without modifying the analytics rule?**  
+<span class="spoiler" tabindex="0">automation rule</span>
+
+**What do you classify an actual threat as?**  
+<span class="spoiler" tabindex="0">True Positive</span>
+
+### Lab-05: Investigate Incidents
+
+**What is the MITRE Tactics classification for Solorigate incidents?**  
+<span class="spoiler" tabindex="0">Command and Control</span>
+
+**Investigate the incident "Sign-ins from IPs that attempt sign-ins to disabled accounts". What is the IP entity involved in this incident?**  
+<span class="spoiler" tabindex="0">175.45.176.99</span>
+
+**Check out this IP's geolocation. What is the city?**  
+<span class="spoiler" tabindex="0">Pyeongyang</span>
+
+**Now, dive back into the alert logs for this incident. Which disabled account was targeted by attackers?**  
+<span class="spoiler" tabindex="0">johns@m365x816222.onmicrosoft.com</span>
+
+**How many login attempts were there for this disabled account?**  
+<span class="spoiler" tabindex="0">4</span>

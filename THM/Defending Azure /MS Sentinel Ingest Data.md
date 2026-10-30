@@ -70,3 +70,52 @@ I opened the **Microsoft Defender Threat Intelligence** connector. It only needs
 I clicked **Connect** to start importing indicators of compromise (IPs, domains, URLs and file hashes) from Microsoft's threat intel into Sentinel, so they can be matched against our own logs.
 
 <img alt="Connected" src="https://github.com/user-attachments/assets/bd31f8cf-7d56-4138-b6fb-250fac419b45" />
+
+## Room questions
+
+Answers are blurred. Hover over or tap an answer to see it.
+
+### Getting Ready to Ingest Data
+
+**What is used to ingest log data into Microsoft Sentinel?**  
+<span class="spoiler" tabindex="0">Data Connectors</span>
+
+### Data Connectors Introduction
+
+**Are data connectors specific to each data source? (Yea/Nay)**  
+<span class="spoiler" tabindex="0">Yea</span>
+
+**Data connectors are available in how many ways?**  
+<span class="spoiler" tabindex="0">2</span>
+
+### Content Hub Introduction
+
+**What are bundles of data connectors, workbooks, analytic rules, and playbooks called in Microsoft Sentinel?**  
+<span class="spoiler" tabindex="0">Solutions</span>
+
+**Content source can either be a Solution or?**  
+<span class="spoiler" tabindex="0">Standalone</span>
+
+### Lab-02: Install Content Hub Solutions
+
+**What Content source type is Microsoft Entra ID?**  
+<span class="spoiler" tabindex="0">Solution</span>
+
+**What category is the Microsoft Entra ID?**  
+<span class="spoiler" tabindex="0">Identity, Security - Automation (SOAR)</span>
+
+### Connecting Data Connectors
+
+**Where can you find all the details about a connector?**  
+<span class="spoiler" tabindex="0">Connector Page</span>
+
+**In order to configure the Microsoft Entra ID data connector, what permissions are required on the Log Analytics workspace?**  
+<span class="spoiler" tabindex="0">Read and Write</span>
+
+### Lab-03: Connect and Configure a Data Connector
+
+**What does the Microsoft Defender Threat Intelligence (MDTI) connector import?**  
+<span class="spoiler" tabindex="0">Indicators of compromise</span>
+
+**Can threat indicators include IP addresses and domains? (Yea/Nay)**  
+<span class="spoiler" tabindex="0">Yea</span>

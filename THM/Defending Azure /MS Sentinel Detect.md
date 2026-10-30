@@ -68,3 +68,40 @@ The rule details show my schedule settings, and **Compare with template** shows 
 ## Thoughts
 
 Being able to compare an active rule against its template is useful. Once rules get tuned over time, it's easy to lose track of what was changed and why, and this gives you a diff. In a real setup I'd want the rules kept in Git as well, so changes get reviewed before they go live.
+
+## Room questions
+
+Answers are blurred. Hover over or tap an answer to see it.
+
+### What Are Analytics Rules
+
+**Do analytics rule templates need to be configured and enabled first in order to detect threats? (Yea/Nay)**  
+<span class="spoiler" tabindex="0">Yea</span>
+
+**Once "active" Analytics rules are triggered, what is generated in Microsoft Sentinel?**  
+<span class="spoiler" tabindex="0">Alerts</span>
+
+**Related alerts, with the help of the correlation engine, are recorded and grouped into what?**  
+<span class="spoiler" tabindex="0">Incidents</span>
+
+### Exploring Analytics Rules
+
+**Are active rules Analytics rules that are currently running and generating security alerts? (Yea/Nay)**  
+<span class="spoiler" tabindex="0">Yea</span>
+
+**How often do Near-Real Time (NRT) rules run?**  
+<span class="spoiler" tabindex="0">Every Minute</span>
+
+**Which rule type runs at regular intervals based on specified timing?**  
+<span class="spoiler" tabindex="0">scheduled</span>
+
+### Analytics Rule Wizard
+
+**What is used to customize Analytics rules templates?**  
+<span class="spoiler" tabindex="0">Analytics rule wizard</span>
+
+**In which part of the wizard can you configure how often the rule will run?**  
+<span class="spoiler" tabindex="0">Query Scheduling</span>
+
+**Which tab of the wizard serves as the SOAR side of Microsoft Sentinel?**  
+<span class="spoiler" tabindex="0">Automated Response</span>
