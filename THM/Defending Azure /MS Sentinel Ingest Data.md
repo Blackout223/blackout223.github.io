@@ -3,207 +3,70 @@ layout: default
 title: MS Sentinel - Ingest Data
 ---
 
-# Getting Ready to Ingest Data
+# MS Sentinel: Ingest Data
 
-The next logical phase is to plan and execute the log data ingestion process. In Microsoft Sentinel, logs are sent to Log Analytics workspaces via data connectors.
+Getting logs into Sentinel. Without data there's nothing to detect on.
 
- The main parts of this room will be:
+## Data connectors and the Content hub
 
-- **Data connectors**
-- **Content hub** solutions  
-- How to **install** Content hub solutions
-- How to **connect** data connectors
+Logs come in through data connectors, and each connector is specific to one data source, for example Entra ID, Defender or AWS. Some connectors are built in, but most come from the Content hub.
 
-**What is used to ingest log data into Microsoft Sentinel?**
+<img alt="Data connectors" src="https://github.com/user-attachments/assets/d604049f-9ec7-4e15-acf2-092d1f213fd1" />
 
-**A: Data Connectors**
+The Content hub is where you install packaged content. A **solution** is a bundle that can include data connectors, analytics rules, workbooks and playbooks for one product. **Standalone** content is a single item on its own. If no solutions are installed, there are no connectors to connect.
 
-# Data Connectors Introduction
+<img alt="Content hub" src="https://github.com/user-attachments/assets/e6660c4a-7647-4155-ae42-01cce6f1f140" />
 
-## Data Sources and Data connectors
+<img alt="Standalone content and solutions" src="https://github.com/user-attachments/assets/2a858830-4070-414b-839e-985017fbd634" />
 
-Data connectors are used to connect log data to various data sources.
+<img alt="Solutions" src="https://github.com/user-attachments/assets/2ce21e1f-36b6-477c-8131-7c83e378a91e" />
 
-There are several hundreds of associating data connectors since these connectors are specific to the data sources, data types and data formats of the ingested log data.
+## Lab: installing a Content hub solution
 
-Sentinel includes various data connectors for both Microsoft and third-party products to assist in onboarding your data.
+I was logged in with the Sentinel Contributor and Log Analytics Contributor roles.
 
-These data connectors are essential for integrating and ingesting data from various sources, such as Microsoft Defender, AWS, Cisco, etc., into Microsoft Sentinel, providing real-time threat detection and analysis.
+<img alt="Lab roles" src="https://github.com/user-attachments/assets/935472d2-4960-4d83-bc00-08021d1889ae" />
 
-**Data connectors** are available in various ways:
+Under **Content management > Content hub**, nothing was installed yet.
 
-- Out-of-the-box (OOTB)
-- Packaged with Content hub solutions
+<img alt="Content hub" src="https://github.com/user-attachments/assets/ccaf2abf-f0b2-4a93-bfd2-7c95cbcdefc4" />
 
-The Content hub provides a packaged way of installing and enabling data connectors for various data sources.
+<img alt="Nothing installed" src="https://github.com/user-attachments/assets/4273d7fe-76bb-4335-8284-c375930191b2" />
 
-<img width="1307" height="795" alt="image" src="https://github.com/user-attachments/assets/d604049f-9ec7-4e15-acf2-092d1f213fd1" />
+I searched for **Microsoft Entra ID** and installed it.
 
-**Are data connectors specific to each data source? (Yea/Nay)**
+<img alt="Installing Microsoft Entra ID" src="https://github.com/user-attachments/assets/b245cd82-d5c0-4a22-b0f2-65231b881ce1" />
 
-**A: Yea**
+The solution details show what it deploys: 63 analytics rules, 1 data connector, 11 playbooks and 2 workbooks.
 
-**Data connectors are available in how many ways?**
+<img alt="Solution details" src="https://github.com/user-attachments/assets/9c8563c0-adde-4d61-b3a6-fb033c4d1cf7" />
 
-**A: 2**
+**Manage** shows each piece of content in the package, and the connector's status.
 
-# Content Hub Introduction
+<img alt="Package details" src="https://github.com/user-attachments/assets/d8a03e6a-3a60-4015-b41a-e178311bc8f6" />
 
-**Content hub** is a place to centrally discover, install, enable, and manage out-of-the-box content and solutions for Microsoft Sentinel.
+<img alt="Data connector status" src="https://github.com/user-attachments/assets/bd3e7ac7-c812-491e-98ba-8b43fd04cf6b" />
 
-Content hub provides:
+## Connecting a data connector
 
-- Centralized in-product search for solutions
-- Single-step deployment
-- Installation of out-of-the-box solutions and content in Microsoft Sentinel
+Installing the solution only adds the connector. It still has to be connected. Each connector has its own page with a description, the log tables it fills, the permissions it needs and the setup steps.
 
-Can be referred to as a SIEM library that enables you to ingest data, monitor, alert, hunt, investigate, respond, and connect with different products, platforms, and services in Microsoft Sentinel.
+<img alt="Connector page" src="https://github.com/user-attachments/assets/dbebaa17-58f4-465b-a778-f993c582409a" />
 
-<img width="1533" height="772" alt="image" src="https://github.com/user-attachments/assets/e6660c4a-7647-4155-ae42-01cce6f1f140" />
+## Lab: connecting threat intelligence
 
-## Content Source: Standalone vs Solutions
+I installed the **Threat Intelligence** solution.
 
-Content sources can be **standalone** content or **solutions**.
+<img alt="Installing Threat Intelligence" src="https://github.com/user-attachments/assets/f087cbd5-e83d-40ed-ac29-5f6b05817cf9" />
 
-<img width="293" height="175" alt="image" src="https://github.com/user-attachments/assets/2a858830-4070-414b-839e-985017fbd634" />
+Then opened **Manage** to see the connectors it came with.
 
-Microsoft Sentinel Solutions are packages of content, such as data connectors, workbooks, analytic rules, playbooks, etc., that fulfil an end-to-end product, domain, or industry vertical scenario in Microsoft Sentinel. We will explore the details of these content types in some upcoming rooms, but for now, we need to get a good grasp of how they are organized in Microsoft Sentinel.
+<img alt="Threat intelligence connectors" src="https://github.com/user-attachments/assets/7b5769fb-9815-4613-8b97-f8ab1f998741" />
 
-<img width="302" height="338" alt="image" src="https://github.com/user-attachments/assets/2ce21e1f-36b6-477c-8131-7c83e378a91e" />
+I opened the **Microsoft Defender Threat Intelligence** connector. It only needs workspace-level permissions, which I already had. Other connectors can need permissions in other places, for example on the source system itself.
 
- With no Content hub solution installed, you won't see any data connectors available to connect.
+<img alt="MDTI connector page" src="https://github.com/user-attachments/assets/8109a79e-523f-4ac2-bc90-31d14dbaed44" />
 
-**What are bundles of data connectors, workbooks, analytic rules, and playbooks called in Microsoft Sentinel?**
+I clicked **Connect** to start importing indicators of compromise (IPs, domains, URLs and file hashes) from Microsoft's threat intel into Sentinel, so they can be matched against our own logs.
 
-**A: Solutions**
-
-**Content source can either be a Solution or?**
-
-**A: Standalone**
-
-# Lab-02: Install Content Hub Solutions
-
-**Context:** Your company recently deployed Microsoft Sentinel. However, no Content hub solutions have been installed yet.
-
-**Role:** You are logged in as:
-
-- [Microsoft Sentinel Contributor](https://learn.microsoft.com/en-us/azure/sentinel/roles#microsoft-sentinel-specific-roles)
-- [Log Analytics Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/analytics#log-analytics-contributor)
-
-<img width="954" height="329" alt="image" src="https://github.com/user-attachments/assets/935472d2-4960-4d83-bc00-08021d1889ae" />
-
-**Lab scenario:** Following the initial deployment of Microsoft Sentinel, you are tasked with **installing a Content hub solution**.
-
-- First, make sure **Sentinel is** **enabled for the workspace**
-- Then, you will install a **Content hub solution**
-- Finally, you will **review** the results
-
-## Install a Content hub solution
-- Go to **Microsoft Sentinel** and open the available workspace
-- Under **Content management**, select **Content hub**
-
-<img width="243" height="126" alt="image" src="https://github.com/user-attachments/assets/ccaf2abf-f0b2-4a93-bfd2-7c95cbcdefc4" />
-
-- Note that currently, no standalone contents or packaged solutions are installed
-
-<img width="833" height="190" alt="image" src="https://github.com/user-attachments/assets/4273d7fe-76bb-4335-8284-c375930191b2" />
-
-- Search for solution: **Microsoft Entra ID**, select it and click **Install**
-
-<img width="1601" height="682" alt="image" src="https://github.com/user-attachments/assets/b245cd82-d5c0-4a22-b0f2-65231b881ce1" />
-
-## Review the Results
-
-- Select the recently installed Content hub solution
-- Review the Content hub **solution details** on the right pane
-<img width="451" height="688" alt="image" src="https://github.com/user-attachments/assets/9c8563c0-adde-4d61-b3a6-fb033c4d1cf7" />
-
-- Note that various **content types** are deployed by this Content hub solution:
-    - 63 **Analytics Rules**
-    - 1 **Data Connector**
-    - 11 **Playbooks**
-    - 2 **Workbooks** (dashboards)
-- Click **Manage** to see the **package details** for the Content hub solution
-
-<img width="971" height="725" alt="image" src="https://github.com/user-attachments/assets/d8a03e6a-3a60-4015-b41a-e178311bc8f6" />
-
-- Under **Content name**, click on **Microsoft Entra ID**
-- Review the data connector **status**
-
-<img width="815" height="404" alt="image" src="https://github.com/user-attachments/assets/bd3e7ac7-c812-491e-98ba-8b43fd04cf6b" />
-
-**What Content source type is Microsoft Entra ID?**
-
-**A: Solution**
-
-**What category is the Microsoft Entra ID?**
-
-**A: Identity, Security - Automation (SOAR)**
-
-# Connecting Data Connectors
-
-Now that we have a **Content hub** solution installed, which comes with a data connector, the next step is to connect and configure it so that log data starts flowing into the Log Analytics workspace for Microsoft Sentinel to analyze and correlate.
-
-To connect a data connector, the concept is to go to its **connector page** and follow the specific instructions for that connector.
-
-<img width="1567" height="1121" alt="image" src="https://github.com/user-attachments/assets/dbebaa17-58f4-465b-a778-f993c582409a" />
-
-- **Description:** What the connector is  
-
-- **Data types:** **Log tables** that will be populated in the Log Analytics workspace once the connector is connected, i.e., types of log data  
-
-- **Instructions:**
-- **Prerequisites:** Permissions you need to have to connect the data
-- **Configuration:** Specific config steps for the connector
-
-**Where can you find all the details about a connector?**
-
-**A: Connector Page**
-
-**In order to configure the Microsoft Entra ID data connector, what permissions are required on the Log Analytics workspace?**
-
-**A: Read and Write**
-
-# Lab-03: Connect and Configure a Data Connector
-
-**Context:** Your company recently deployed Microsoft Sentinel and a Content hub solution is installed. A data connector is populated; however, it has not been connected yet.
-
-**Role:** You are logged in as:
-
-- [Microsoft Sentinel Contributor](https://learn.microsoft.com/en-us/azure/sentinel/roles#microsoft-sentinel-specific-roles)
-- [Log Analytics Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/analytics#log-analytics-contributor)
-
-**Lab scenario:** Following the installation of the Content hub solution, you are tasked with **configuring data connectors**.
-
-- First, you will install another Content hub solution: **Threat Intelligence**
-- Then, you will connect the **data connector**
-- Finally, you will **review** the ingested **Threat Intelligence** data
-
-## Install the Threat Intelligence Content hub solution
-
-<img width="1264" height="1052" alt="image" src="https://github.com/user-attachments/assets/f087cbd5-e83d-40ed-ac29-5f6b05817cf9" />
-
-## Connect the Threat Intelligence Data
-
-- After the installation is complete, select **Manage** to **review** the deployed **Threat Intelligence** (TI) connectors
-
-<img width="399" height="722" alt="image" src="https://github.com/user-attachments/assets/7b5769fb-9815-4613-8b97-f8ab1f998741" />
-
-- Select the **Microsoft Defender Threat Intelligence** data connector and **open the connector page**
-
-<img width="934" height="212" alt="image" src="https://github.com/user-attachments/assets/8109a79e-523f-4ac2-bc90-31d14dbaed44" />
-
-- For this data connector, only **workspace-scoped permissions** are needed, which you already have
-- Other data connectors might have different permission requirements on various scopes depending on the integration nature of that data connector
-- Click **Connect** to import **Indicators of Compromise (IOCs)** from **Microsoft Defender Threat Intelligence (MDTI)** into Microsoft Sentinel
-
-<img width="1224" height="587" alt="image" src="https://github.com/user-attachments/assets/bd31f8cf-7d56-4138-b6fb-250fac419b45" />
-
-**What does the Microsoft Defender Threat Intelligence (MDTI) connector import?**
-
-**A: Indicators of compromise**
-
-**Can threat indicators include IP addresses and domains? (Yea/Nay)**
-
-**Yea**
-
+<img alt="Connected" src="https://github.com/user-attachments/assets/bd31f8cf-7d56-4138-b6fb-250fac419b45" />

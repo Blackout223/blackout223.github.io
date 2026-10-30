@@ -3,265 +3,81 @@ layout: default
 title: MS Sentinel - Investigate
 ---
 
-# Introduction
+# MS Sentinel: Investigate
 
-We will look into **incident investigation and management** concepts to see how we can easily manage security incidents in Microsoft Sentinel.
+Working incidents as an L1 analyst: taking ownership, investigating, and closing or escalating.
 
-- Firstly, we'll introduce incident tools and features in Microsoft Sentinel
-- Then, investigate sample incidents
-- Finally, we'll see how we can manage incidents, hand them over, or escalate them a higher level security team
+## Events, alerts and incidents
 
-# Events/Alerts/Incidents
+- **Event:** anything that happens and gets logged. Most are normal.
+- **Alert:** raised when one or more events match a rule.
+- **Incident:** one or more related alerts that need someone to investigate.
 
-| **Event**    | Any observable change or occurrence within a system could be routine, informational, or indicative of issues.<br><br>All technology devices create events in the form of log entries and regular status updates, which are recorded as event data in various databases and other files. | A point in time representing the state of service                            |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| **Alert**    | A notification triggered by an event designed to inform stakeholders of a situation that needs attention.                                                                                                                                                                               | Certain event(s) that meet a threshold                                       |
-| **Incident** | A specific kind of negative event that disrupts normal operations or services and requires intervention.                                                                                                                                                                                | Contains correlated alerts that indicate impact, disruptive issue, or breach |
+Not every incident comes from Sentinel's own rules. In most environments a lot of them come from connected products like the Defender suite.
 
-**What is a normal activity that happens at a point in time, neither good nor bad called?**
+<img alt="Incidents from other products" src="https://github.com/user-attachments/assets/c63529c0-744a-4add-93e0-c5f1181be4bf" />
 
-**A: Event**
+## Triage
 
-**What is a negative event that disrupts normal operations and requires investigation called?**
+The first step is to assign the incident to yourself and change the status from **New** to **Active**, so nobody else picks up the same thing.
 
-**A: Incident**
+<img alt="Changing status to Active" src="https://github.com/user-attachments/assets/e56b7859-1381-44a4-9b67-36330562c248" />
 
-# Incidents Overview
+Incidents can have tasks attached. These are a checklist of steps set by senior analysts, so every analyst handles the same type of incident the same way, whatever shift they're on.
 
-![Microsoft Sentinel Incidents dashboard shows 3 open incidents, 3 new incidents, and 0 active incidents. The selected incident is "Sign-ins from IPs that attempt sign-ins to disabled accounts," categorized as medium severity, unassigned owner, and new status.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737750468291.png)  
+<img alt="Incident tasks" src="https://github.com/user-attachments/assets/d950b4f3-93ee-463d-a475-dae02f7cc86f" />
 
-1. Showing the number of **Open**, **New**, and **Active** incidents.
-2. Show **all incidents** based on the filters applied, e.g., the last 30 days.
-3. **Incident management details** for the selected incident:
-- **Owner:** Unassigned or assigned owner  
-- **Status:** New, Active, Closed
-- **Severity:** High, Medium, Low, Informational
-4.  **Evidence: Events** and **Alerts** related to the selected incident.
+## Investigating
 
-The right pane only summarizes the incident; more details can be found by clicking "**View full details**" for investigation purposes.
+The **timeline** shows the alerts in order and can be filtered by severity or MITRE tactic.
 
-It is also important to note that the source of alerts resulting in incidents may not always be Microsoft Sentinel itself. Other security products may also contribute to incidents, as seen below. In fact, this is the most common scenario: Once connected to Microsoft Sentinel, alerts from these products will produce the majority of the incidents, such as the Microsoft Defender products suite.  
+<img alt="Incident timeline" src="https://github.com/user-attachments/assets/b4bfeb20-988d-4313-90b4-bcbdb1b3a0f4" />
 
-<img width="301" height="334" alt="image" src="https://github.com/user-attachments/assets/c63529c0-744a-4add-93e0-c5f1181be4bf" />
+**Link to LA** opens the alert's query in Log Analytics, so you can see the raw logs without leaving the incident.
 
-**Is Microsoft Sentinel the only product contributing to incidents? (Yea/Nay)**
+<img alt="Link to Log Analytics" src="https://github.com/user-attachments/assets/275f947e-a0b8-4b89-b53e-fcaa86f101dd" />
 
-**A: Nay**
+The logs show the entities involved, like accounts, hosts and IP addresses.
 
-# Triage and Investigate - Ownership, Status, Tasks
+<img alt="Entities in the logs" src="https://github.com/user-attachments/assets/1de2b6cc-3ec4-40c5-af8f-4298bebf23e9" />
 
-## Incident Ownership
+Once you have an IP, enrichment can add context to it, for example looking up its location.
 
-This individual, known as the incident owner, is responsible for overseeing the entire incident management process, encompassing investigation and providing status updates. Ownership can be transferred at any point to delegate the incident to another member of the security team for additional investigation or escalation.
+<img alt="IP geolocation" src="https://github.com/user-attachments/assets/cba34f25-ff15-489c-a0c3-2ad3e20e95fd" />
 
-As for a SOC analyst, **triaging** and **investigating** an incident usually starts by taking ownership of the incident by changing the **owner** and **status**. This could be done from the incident overview pane by:
+**Investigate** opens a graph of the alerts and entities and how they connect.
 
-- **Assigning** the incident **owner** to yourself.
+<img alt="Investigation graph" src="https://github.com/user-attachments/assets/3f8c35e8-c74d-425b-a75f-2cc1f7266abb" />
 
-![Incident management system interface with an incident titled "Sign-ins from IPs that attempt sign-ins to disabled accounts."](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737745374629.png)  
+<img alt="Investigation graph" src="https://github.com/user-attachments/assets/a2f895ff-81bf-40a7-9b1b-7f4e80c4781f" />
 
-- Changing the incident **status** from **New** to **Active.**
+Hovering over an entity gives exploration queries, which are ready-made follow-up questions like "what else has this IP done?"
 
-<img width="460" height="297" alt="image" src="https://github.com/user-attachments/assets/e56b7859-1381-44a4-9b67-36330562c248" />
+<img alt="Exploration queries" src="https://github.com/user-attachments/assets/2ca1d0a1-5631-498b-b7b2-36abe9143090" />
 
+## Closing incidents
 
-## Incident Severity
+Every closed incident gets a classification:
 
-The severity of an incident is initially determined by the rule or Microsoft security source that triggered it. Typically, the severity of an incident remains unchanged, but there's the possibility of adjusting it if you determine that the initial classification is inaccurate. Severity options range from **Informational**, **Low**, **Medium**, to **High**.
+- **True positive:** a real threat.
+- **Benign positive:** real activity, but expected. For example a pen test or red team exercise.
+- **False positive:** the rule logic was wrong or the data was wrong.
+- **Undetermined:** not enough information to decide.
 
-Using the **incident overview pane**, you can also **add tags** and take some initial **actions** for the incident, such as:
+False positives can be handled two ways. An automation rule can close matching incidents without touching the analytics rule, which is quick but doesn't fix the cause. Or the analytics rule itself can be changed, which is the proper long-term fix.
 
-- **Investigate**
-- **Run playbook**
-- **Create automation rule**
-- **Create team**
+## Lab: investigating incidents
 
-![Incident management system interface titled "Sign-ins from IPs that attempt sign-ins to disabled accounts," with Incident ID: 3. The incident is unassigned, marked as "New," and has a medium severity level.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737745374661.png)
+I reviewed the open incidents and checked the MITRE tactics on the Solorigate incidents.
 
-## Incident Details
+<img alt="Solorigate incident" src="https://github.com/user-attachments/assets/debeaf02-2a5f-43e1-bc07-2886b8b17d2a" />
 
-When it's time for a more in-depth investigation, the **Incident Details** page will reveal many details for the SOC analyst. By clicking "**View full details**", we get to the page where most investigation actions can be performed.
+Then I looked at **Sign-ins from IPs that attempt sign-ins to disabled accounts**. I found the IP entity involved and looked up its location.
 
-![Incident titled "Sign-ins from IPs that attempt sign-ins to disabled accounts". The incident ID is 3, with medium severity, new status, and unassigned owner. Workspace name: law-20240213-123.](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1737745374624.png)  
+<img alt="IP entity" src="https://github.com/user-attachments/assets/21a8e3af-8a85-4782-ac4d-9991f1065d62" />
 
-At the top of the page, you can find:
+In the alert logs I found which disabled account was being targeted and how many times it was tried.
 
-- **Logs:** To open the Log Analytics query window  
-- **Tasks:** To see the tasks assigned for the incident  
-- **Activity log:** To see any actions taken for the incident
+<img alt="Alert logs" src="https://github.com/user-attachments/assets/2c1e9ff4-c703-4ccb-ab63-432d8a73de0f" />
 
-## Incident Tasks
-
-SOC analysts are tasked with a series of steps—**triaging**, **investigating**, or **remediating** incidents; hence, formalizing these procedures is crucial. By establishing a standardized list of tasks, your Security Operations Center (SOC) can maintain consistency across all analysts, regardless of their shifts.
-
-<img width="583" height="490" alt="image" src="https://github.com/user-attachments/assets/d950b4f3-93ee-463d-a475-dae02f7cc86f" />
-
-This approach guarantees that every incident receives uniform treatment and adheres to Service Level Agreements (SLAs). With predefined steps set by SOC management or senior analysts (lvl 2/3), drawing from common security frameworks like NIST, past incident experience, or recommendations from security vendors, analysts can work efficiently without deliberating on the next steps or fearing missing critical actions.
-
-**What ensures the smooth and efficient operation of security operations (SecOps)?**
-
-**A: process standardization**
-
-**What helps to guarantee that every incident receives uniform treatment?**
-
-**A: Incident Tasks**
-
-# Triage and Investigate - Timeline, Logs, Entities, Visual
-
-## Incident Timeline
-An **incident timeline** is particularly helpful for seeing the timeline of an attacker's activity. Here, you can also search the alerts by **severity** and **tactics** to narrow down the ones you want to investigate further.
-
-<img width="795" height="440" alt="image" src="https://github.com/user-attachments/assets/b4bfeb20-988d-4313-90b4-bcbdb1b3a0f4" />
-
-## Investigate With Logs
-
-To investigate a specific alert without leaving the incident details page, click "**Link to LA**". This will bring up the **Log Analytics Query** page, where we can further analyze this alert.
-
-<img width="868" height="511" alt="image" src="https://github.com/user-attachments/assets/275f947e-a0b8-4b89-b53e-fcaa86f101dd" />
-
-Based on the **rule logic**, certain **entities** could be of interest here, such as IP addresses, accounts, etc.  
-
-<img width="1378" height="712" alt="image" src="https://github.com/user-attachments/assets/1de2b6cc-3ec4-40c5-af8f-4298bebf23e9" />
-
-## Incident Entities
-
-When Microsoft Sentinel generates alerts, they contain data items that Sentinel can recognize and classify into categories as **entities**. Here are some entity types recognized by Microsoft Sentinel:
-
-- Account
-- Host
-- IP address
-- URL
-- Malware
-- Process
-
-Knowing the IP address entity involved in the incident, incident enhancement playbooks can be applied to provide more context for this IP. For instance, these automation playbooks can call APIs such as **[IP-API](https://ip-api.com/)** to get **geolocation** details for the IP.
-
-<img width="1438" height="780" alt="image" src="https://github.com/user-attachments/assets/cba34f25-ff15-489c-a0c3-2ad3e20e95fd" />
-
-
-## Visual Investigation
-
-Incidents can also be investigated visually. If you prefer a visual, graphical representation of alerts, entities, and the connections between them in your investigation, you can do so by clicking the **Investigate** button on the Incident Details page.  
-
-<img width="166" height="203" alt="image" src="https://github.com/user-attachments/assets/3f8c35e8-c74d-425b-a75f-2cc1f7266abb" />
-
-<img width="1392" height="757" alt="image" src="https://github.com/user-attachments/assets/a2f895ff-81bf-40a7-9b1b-7f4e80c4781f" />
-
-You can further deepen your investigation by hovering over each entity. This will show a list of additional questions per entity type. These are called **exploration queries.**
-
-<img width="493" height="427" alt="image" src="https://github.com/user-attachments/assets/2ca1d0a1-5631-498b-b7b2-36abe9143090" />
-
-**Which link can you click to see the specific logs of an alert without leaving the context of the incident details page?**
-
-**A: Link to LA**
-
-**During graphical investigation, which queries can be utilized to deepen the investigation?**
-
-**A: Exploration**
-
-# Incident Closure - True/Benign/False Positives
-
-# Closing Incidents
-
-When an incident is generated in Microsoft Sentinel, it is automatically labelled as "**New**". As you access and address these incidents, manually update their status to accurately represent their current state. For incidents undergoing investigation, you designate the status as "**Active**". Once an incident is completely resolved, mark it as "**Closed**".
-
-Once an incident is closed, select the classification:
-
-
-|-----|-----|
-| **Classification** | **Description**
-| True Positive | Suspicious activity
-| Benign Positive | Suspicious but expected
-| False Positive | Incorrect alert logic
-| False Positive | Inaccurate data
-| Undetermined | --- 
-
-**True Positive -** **Suspicious Activity**
-
-- The root cause was an actual threat.  
-    
-
-**Benign Positive -** **Suspicious but Expected**
-
-- The action detected is **real** but **not malicious**. For instance:  
-    - Penetration tests
-    - Elevating privileges to deploy system updates  
-        
-
-**False Positive - Inaccurate Data**  
-
-- **Data** contained in the incident details is inaccurate
-    - Wrong user account, IP, etc.
-    - Analytics rule may need tuning  
-        
-
-**False Positive - Incorrect Alert Logic**  
-
-Microsoft Sentinel **Analytics rules** alert you when suspicious activity arises within your network. Recognizing that no analytics rule is flawless, it's inevitable that you'll encounter false positives requiring attention.  
-  
-Some **false positives** can occur due to some common activities, such as the following:
-
-- Routine activities performed by certain users, often service principals, exhibit patterns that appear suspicious
-- Purposeful security scanning originating from recognized IP addresses being flagged as malicious
-- A rule designed to exclude private IP addresses may inadvertently include some internal IP addresses that aren't private
-
-On a high level, these false positives can be eliminated with the following methods:
-
-- **Automation rules**
-    - By creating exceptions without modifying Analytics rules
-- **Scheduled Analytics rules modifications**
-    - By allowing more detailed and permanent exceptions
-- **Undetermined**
-    - You are unable to determine the cause of the incident
-    - You might get a similar incident in the future; however, for the current, you don't have enough info for a conclusion
-
-**You investigate an incident and conclude that it is due to red team activities. What is your closure classification?**
-
-**A: benign positive**
-
-**How do you eliminate a false positive without modifying the analytics rule?**
-
-**A: automation rule**
-
-**What do you classify an actual threat as?**
-
-**A: True Positive**
-
-# Lab-05: Investigate Incidents
-
-**Context:** In your company's Microsoft Sentinel environment, previously enabled Analytics rules started to generate incidents.
-
-**Role:** You are logged in as:
-
-- [Microsoft Sentinel Contributor](https://learn.microsoft.com/en-us/azure/sentinel/roles#microsoft-sentinel-specific-roles)
-- [Log Analytics Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/analytics#log-analytics-contributor)
-
-**Lab scenario:** As a **SOC LVL 1 Analyst**, you need to start **triaging and investigating the incidents**. You will:
-
-- First, review open incidents and **take ownership**
-- Then, **investigate** the **incident**
-- Finally, **escalate** the incident to SOC LVL 2 for **in-depth investigation** and **threat hunting**
-
-
-**What is the MITRE Tactics classification for Solorigate incidents?**
-<img width="393" height="419" alt="image" src="https://github.com/user-attachments/assets/debeaf02-2a5f-43e1-bc07-2886b8b17d2a" />
-**A: Command and Control**
-
-**Investigate the incident "Sign-ins from IPs that attempt sign-ins to disabled accounts". What is the IP entity involved in this incident?**
-<img width="1243" height="836" alt="image" src="https://github.com/user-attachments/assets/21a8e3af-8a85-4782-ac4d-9991f1065d62" />
-**A: 175.45.176.99**
-
-**Check out this IP's geolocation. What is the city?**
-
-**A: Pyeongyang**
-
-**Now, dive back into the alert logs for this incident. Which disabled account was targeted by attackers?**
-
-<img width="718" height="304" alt="image" src="https://github.com/user-attachments/assets/2c1e9ff4-c703-4ccb-ab63-432d8a73de0f" />
-
-**A: johns@m365x816222.onmicrosoft.com**
-
-**How many login attempts were there for this disabled account?**
-
-**A: 4**
-
+Sign-in attempts against a disabled account are a good signal. Nobody legitimate should be logging into an account that's been switched off, so it usually means someone is trying old or leaked credentials. Next steps would be checking whether the same IP tried any active accounts, and escalating to L2 if it had.
