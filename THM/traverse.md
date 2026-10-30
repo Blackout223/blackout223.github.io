@@ -5,7 +5,8 @@ title: Traverse - TryHackMe Writeup
 
 # Traverse
 
-**Difficulty:** Easy
+**Difficulty:** Easy  
+**Written:** August 2023  
 **Room:** Challenge your secure coding skills to restore a compromised website.
 
 ## Finding the hidden JavaScript

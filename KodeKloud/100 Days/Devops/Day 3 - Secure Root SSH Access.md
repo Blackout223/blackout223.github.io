@@ -3,17 +3,13 @@ layout: default
 title: Day 3 - Secure Root SSH Access
 ---
 
-# Day 3 - Secure Root SSH Access
+# Overview
 
-## Scenario
+After a security audit, the xFusionCorp Industries security team brought in new rules, including no direct root login over SSH. My task was to turn off root SSH login on all three app servers in the Stratos Datacenter.
 
-After a security audit, the xFusionCorp Industries security team has rolled out new rules, including a ban on direct root SSH login. My task was to disable direct root SSH login on all three app servers in the Stratos Datacenter.
+If root can log in over SSH, an attacker only needs one password to own the whole server. It also means every admin action in the logs just says "root", so you can't tell who actually did it. With it turned off, people have to log in as themselves and then use sudo.
 
-## Why it matters
-
-If root can log in over SSH, an attacker only needs one password to get full control of a server, and every admin action shows up in the logs as "root", so you can't tell who did what. Disabling it forces people to log in as their own named user and then use sudo, which gives you an audit trail and one more barrier for an attacker.
-
-## What I did
+# Solution
 
 These are the three app servers and their credentials:
 
@@ -61,31 +57,26 @@ Same steps again.
 
 <img width="809" height="1006" alt="App 3 sshd_config" src="https://github.com/user-attachments/assets/eddd99d8-9254-440a-afaa-1929629a8517" />
 
-## What went wrong
+# Checking it worked
 
-The easy mistake here is editing the file and moving on without restarting sshd. Until the service restarts it keeps running with the old settings, so root login is still allowed even though the file says otherwise. My first version of this write-up only mentioned the restart at the very end. Restarting straight after each edit, then verifying, avoids this.
+One thing to watch out for: if you edit the file and don't restart sshd, it carries on running with the old settings and root can still log in. When I first wrote this up I only mentioned the restart at the very end, so I've moved it to straight after each edit.
 
-## How I verified it
-
-On each server, check the setting sshd is actually running with, not just what the file says:
+To check, this shows the setting sshd is actually running with, not just what's in the file:
 
 ```sh
 sshd -T | grep -i permitrootlogin
 # permitrootlogin no
 ```
 
-Then try logging in as root from another host. It should be refused:
+Then try logging in as root. It should be refused:
 
 ```sh
 ssh root@172.16.238.10
 # Permission denied
 ```
 
-## How I'd do this in production
+# Doing this for real
 
-Editing three servers by hand doesn't scale, and it's easy to miss one. In a real environment I would:
+Editing three servers by hand is fine for a lab, but with fifty servers you'd miss one. I'd do it with an Ansible task instead (I install Ansible on Day 8), and set `PermitRootLogin no` in the base image so new servers start out that way. I'd also turn off password login and only allow SSH keys.
 
-- Make the change with one Ansible task run against every server, so it's repeatable and in version control.
-- Bake `PermitRootLogin no` into the base server image, so new servers are secure from the start.
-- Disable password authentication as well and use SSH keys only.
-- Run `sshd -t` to check the config is valid before restarting, so a typo doesn't lock everyone out.
+It's also worth running `sshd -t` before restarting. It checks the config file for mistakes, so a typo doesn't stop sshd starting and lock everyone out.

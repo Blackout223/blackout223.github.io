@@ -6,7 +6,7 @@ description: Five years in IT support and security operations, now building towa
 
 ## About me
 
-I'm a Technical Support Representative at TryHackMe. Part of my role is investigating AWS abuse alerts using CloudTrail, VPC Flow Logs and Elastic SIEM, and I lead the company's bug bounty programme. Before that I spent five years in IT support and security operations in regulated financial-sector environments, working with Microsoft 365, Entra ID, Intune, EDR rollouts, Cyber Essentials Plus and ISO 27001.
+I'm a Technical Support Representative at TryHackMe. Part of my role is investigating AWS abuse alerts using CloudTrail, VPC Flow Logs and Elastic SIEM, and I lead the company's bug bounty programme. Before TryHackMe I worked in IT support for companies in the financial sector, where I looked after Microsoft 365, Entra ID and Intune, helped roll out EDR, and worked on Cyber Essentials Plus and ISO 27001.
 
 I'm looking for a Cloud Security Engineer role. AWS is my main platform and I'm open to Azure and GCP.
 
@@ -18,19 +18,19 @@ I'm looking for a Cloud Security Engineer role. AWS is my main platform and I'm 
 
 ### [CostCanary](https://github.com/Blackout223/costcanary)
 
-Attackers who steal AWS keys usually leave a trace in the bill before anyone notices: new regions, GPU instances, Bedrock usage, data egress spikes. CostCanary reads Cost and Usage Report data and flags those signs, ranked by severity with a plain-English reason for each. It needs no AWS credentials and can fail a CI pipeline on high-severity findings.
+When someone steals AWS keys, it often shows up in the bill before anything else. Things like new regions being used, GPU instances for cryptomining, or a big jump in data going out. CostCanary goes through AWS billing exports (Cost and Usage Reports) looking for those signs and ranks what it finds by severity. It doesn't need any AWS credentials, and it can be run as a check in a CI pipeline.
 
 Python, pytest, GitHub Actions
 
 ### [Raspberry Pi Cloud Security Lab](https://github.com/Blackout223/Pi-Container-Security)
 
-A k3s cluster on a Raspberry Pi 4. In each stage I set something up, break it the way real systems get misconfigured, then detect and fix it. So far: container hardening and Trivy triage, then RBAC, network policies and Pod Security Standards. Falco, Kyverno and kube-bench are next.
+A k3s cluster on a Raspberry Pi 4. In each stage I set something up, misconfigure it on purpose, then work out how to spot the problem and fix it. Done so far: hardening a container and scanning it with Trivy, then RBAC, network policies and Pod Security Standards in Kubernetes. Falco, Kyverno and kube-bench are next.
 
 Kubernetes (k3s), Docker, Trivy
 
 ### [AWS Threat Detection and Automated Response](AWS%20Projects/Threat%20Detection%20and%20Automated%20Response%20Pipeline)
 
-A detection pipeline for a fictional fintech: CloudTrail and CloudWatch alarms for root use, logins without MFA and IAM changes, GuardDuty findings routed through EventBridge, and a Lambda that disables compromised access keys. Tested with simulated attacks and GuardDuty sample findings.
+Threat detection for a made-up fintech company. CloudWatch alarms go off for root logins, console logins without MFA and IAM changes. GuardDuty findings go through EventBridge, and a Lambda turns off any access key GuardDuty flags as compromised. I tested it by setting off the alarms myself and with GuardDuty's sample findings, and wrote up what I'd do differently.
 
 CloudTrail, GuardDuty, EventBridge, Lambda, SNS, Security Hub
 
@@ -45,7 +45,7 @@ CloudTrail, GuardDuty, EventBridge, Lambda, SNS, Security Hub
 
 ## Hands-on practice
 
-Labs, challenges and guided projects I have worked through, with my write-ups.
+Write-ups from labs, CTFs and guided projects I've done.
 
 - [TryHackMe write-ups](thm)
 - [KodeKloud 100 Days of DevOps](kodekloud)

@@ -322,7 +322,7 @@ def lambda_handler(event, context):
 
             logger.info("Key deactivated and notification sent.")
         else:
-            logger.info(f"Finding severity {severity} or no key details — no auto-remediation taken.")
+            logger.info(f"Finding severity {severity} or no key details, so no auto-remediation taken.")
 
     except Exception as e:
         logger.error(f"Remediation failed: {str(e)}")
@@ -403,9 +403,9 @@ Checking Lambda logs in my `/aws/lambda/SecurePay-AutoRemediation` log group. La
 
 # What I'd change
 
-Looking back at this build, these are the gaps I'd fix before trusting it in a real account.
+Looking back at this, there's a few things I'd fix before I'd trust it in a real account.
 
-**The Lambda role has far too much access.** I attached `IAMFullAccess` to get it working. If that function were ever compromised, the attacker would get full control of IAM. The function only needs to deactivate keys and send one SNS message, so the role should be scoped to exactly that (plus `AWSLambdaBasicExecutionRole` for its own logs):
+The biggest one is the Lambda role. I gave it `IAMFullAccess` to get it working, but that means if anyone got control of the function they'd have full control of IAM. All the function actually does is deactivate a key and send an SNS message, so the role only needs those two permissions (plus `AWSLambdaBasicExecutionRole` so it can write its logs):
 
 ```JSON
 {
@@ -425,20 +425,20 @@ Looking back at this build, these are the gaps I'd fix before trusting it in a r
 }
 ```
 
-**The IAM metric filter misses common privilege escalation calls.** It catches inline policy changes but not `AttachUserPolicy`, `AttachRolePolicy`, `AttachGroupPolicy`, the matching `Detach` calls, or `CreatePolicyVersion` and `SetDefaultPolicyVersion`. Attaching `AdministratorAccess` to a user would have gone unnoticed. The CIS AWS Foundations Benchmark has a fuller filter I should have started from.
+My IAM metric filter also has gaps. It picks up inline policy changes, but not `AttachUserPolicy`, `AttachRolePolicy`, `AttachGroupPolicy`, the `Detach` versions of those, `CreatePolicyVersion` or `SetDefaultPolicyVersion`. So if someone attached `AdministratorAccess` to a user, nothing would have fired. I should have started from the filter in the CIS AWS Foundations Benchmark.
 
-**Other detections I'd add:**
+Other alerts I'd add:
 - `RevokeSecurityGroupIngress` and `RevokeSecurityGroupEgress` in the security group filter
-- `CreateAccessKey`, a common persistence step after a key is stolen
-- `StopLogging` and `DeleteTrail`, because an attacker turning off CloudTrail is one of the strongest signals there is
+- `CreateAccessKey`, because making a new key is a common way for an attacker to keep access after stealing one
+- `StopLogging` and `DeleteTrail`, because if someone turns CloudTrail off you want to know straight away
 
-**The audit trail isn't tamper-evident yet.** I didn't enable CloudTrail log file validation, KMS encryption on the log bucket, or S3 Object Lock. Without those, someone with enough access could alter or delete the logs.
+I said the logs were an audit trail, but I never turned on CloudTrail log file validation, KMS encryption on the bucket or S3 Object Lock. Without those, someone with enough access could change or delete the logs.
 
-**The Lambda needs hardening.** The account ID and SNS topic ARN are hardcoded and should be environment variables. The function should also handle findings where the access key no longer exists, so it doesn't fail on sample findings or keys that were already rotated.
+In the Lambda, the account ID and SNS ARN are hardcoded and should be environment variables. It also needs to handle findings where the key doesn't exist anymore, like GuardDuty's sample findings or a key that's already been rotated, instead of just erroring.
 
-**It was built by clicking through the console.** That makes it hard to review, repeat or tear down cleanly. The next version will be written in Terraform, with security scanning in a CI pipeline before anything is deployed.
+I built all of this by clicking through the console, which makes it hard to check, rebuild or tear down properly. I'm learning Terraform and want to rebuild it that way.
 
-**Teardown:** I deleted every resource the same day I finished testing, to avoid ongoing costs and to keep a deliberately public test bucket from sitting in the account.
+I deleted everything the same day I finished testing, so I wasn't paying for it and the public test bucket wasn't left sitting there.
 
 # Conclusion
 
