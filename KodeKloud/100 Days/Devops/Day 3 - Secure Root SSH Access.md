@@ -3,67 +3,89 @@ layout: default
 title: Day 3 - Secure Root SSH Access
 ---
 
-# Overview
+# Day 3 - Secure Root SSH Access
 
-Following security audits, the `xFusionCorp Industries` security team has rolled out new protocols, including the restriction of direct root SSH login.  
+## Scenario
 
-Your task is to disable direct SSH root login on all app servers within the `Stratos Datacenter`.
+After a security audit, the xFusionCorp Industries security team has rolled out new rules, including a ban on direct root SSH login. My task was to disable direct root SSH login on all three app servers in the Stratos Datacenter.
 
-# Solution
+## Why it matters
 
-We have 3 app servers where we will need to disable SSH. These are the servers and credentials where we will need to disable SSH
-<img width="1120" height="266" alt="image" src="https://github.com/user-attachments/assets/f9e3b504-fb17-467d-9936-76a88c15c9b3" />
+If root can log in over SSH, an attacker only needs one password to get full control of a server, and every admin action shows up in the logs as "root", so you can't tell who did what. Disabling it forces people to log in as their own named user and then use sudo, which gives you an audit trail and one more barrier for an attacker.
 
+## What I did
 
-Let's login to `Nautilus App 1` first and disable SSH
+These are the three app servers and their credentials:
+
+<img width="1120" height="266" alt="App servers and credentials" src="https://github.com/user-attachments/assets/f9e3b504-fb17-467d-9936-76a88c15c9b3" />
+
+**Nautilus App 1**
+
 ```sh
 ssh tony@172.16.238.10
+# password: Ir0nM@n
+sudo su
+vi /etc/ssh/sshd_config
 ```
 
-Enter password:
-`Ir0nM@n`
+`/etc/ssh/sshd_config` is the main SSH server configuration file. `PermitRootLogin` was set to `yes`, so I changed it to `no` and saved with `:wq`.
 
-We will need to switch to root using
-`sudo su`
+<img width="1281" height="1175" alt="PermitRootLogin set to yes" src="https://github.com/user-attachments/assets/c40aa443-2d99-4ed7-b323-cd6ffd0e6921" />
+<img width="1414" height="1208" alt="PermitRootLogin changed to no" src="https://github.com/user-attachments/assets/31ee6098-fd16-478f-8e73-49d0077aa0a1" />
 
-Now we will need to edit the file `/etc/ssh/sshd_config` - As this is the main configuration file for SSH
+The change only takes effect once the SSH service is restarted:
 
-We can us `vi` to edit the file 
-`vi /etc/ssh/sshd_config`
-
-`PermitRootLogin` is set to yes and will need to be changed to no
-<img width="1281" height="1175" alt="image" src="https://github.com/user-attachments/assets/c40aa443-2d99-4ed7-b323-cd6ffd0e6921" />
-<img width="1414" height="1208" alt="image" src="https://github.com/user-attachments/assets/31ee6098-fd16-478f-8e73-49d0077aa0a1" />
-
-Now we can exit and save the file by typing  `:wq`
-
-Now we repeat the same steps for `Nautilus App 2/3`
-
-```sh
-ssh steve@172.16.238.11
-```
-
-Enter password:
-`Am3ric@`
-
-Switch to root and edit the file changing `PermitRootLogin` to no
-<img width="1010" height="900" alt="image" src="https://github.com/user-attachments/assets/d8eced97-65b2-4e82-8401-57e43f8ea88c" />
-
-Now we can disable on the final app server
-```sh
-ssh banner@172.16.238.12
-```
-
-Enter password:
-`BigGr33n`
-
-Switch to root and update the file
-<img width="809" height="1006" alt="image" src="https://github.com/user-attachments/assets/eddd99d8-9254-440a-afaa-1929629a8517" />
-
-All SSH access to login to root is now disabled. 
-
-When making changes to the file, you will need to restart the SSH service each time for each server for the changes to take place. This can be done by running
 ```sh
 systemctl restart sshd
 ```
 
+**Nautilus App 2**
+
+```sh
+ssh steve@172.16.238.11
+# password: Am3ric@
+```
+
+Same steps: switch to root, set `PermitRootLogin no`, then restart sshd.
+
+<img width="1010" height="900" alt="App 2 sshd_config" src="https://github.com/user-attachments/assets/d8eced97-65b2-4e82-8401-57e43f8ea88c" />
+
+**Nautilus App 3**
+
+```sh
+ssh banner@172.16.238.12
+# password: BigGr33n
+```
+
+Same steps again.
+
+<img width="809" height="1006" alt="App 3 sshd_config" src="https://github.com/user-attachments/assets/eddd99d8-9254-440a-afaa-1929629a8517" />
+
+## What went wrong
+
+The easy mistake here is editing the file and moving on without restarting sshd. Until the service restarts it keeps running with the old settings, so root login is still allowed even though the file says otherwise. My first version of this write-up only mentioned the restart at the very end. Restarting straight after each edit, then verifying, avoids this.
+
+## How I verified it
+
+On each server, check the setting sshd is actually running with, not just what the file says:
+
+```sh
+sshd -T | grep -i permitrootlogin
+# permitrootlogin no
+```
+
+Then try logging in as root from another host. It should be refused:
+
+```sh
+ssh root@172.16.238.10
+# Permission denied
+```
+
+## How I'd do this in production
+
+Editing three servers by hand doesn't scale, and it's easy to miss one. In a real environment I would:
+
+- Make the change with one Ansible task run against every server, so it's repeatable and in version control.
+- Bake `PermitRootLogin no` into the base server image, so new servers are secure from the start.
+- Disable password authentication as well and use SSH keys only.
+- Run `sshd -t` to check the config is valid before restarting, so a typo doesn't lock everyone out.
