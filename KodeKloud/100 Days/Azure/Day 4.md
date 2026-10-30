@@ -5,7 +5,7 @@ title: Azure Day 4 - Create Virtual Network
 
 # Overview 
 
-The Nautilus DevOps team is strategizing the migration of a portion of their infrastructure to the Azure cloud. Recognizing the scale of this undertaking, they have opted to approach the migration in incremental steps rather than as a single massive transition. To achieve this, they have segmented large tasks into smaller, more manageable units. This granular approach enables the team to execute the migration in gradual phases, ensuring smoother implementation and minimizing disruption to ongoing operations.
+The Nautilus DevOps team is moving part of their infrastructure to Azure in small steps. For this task I had to:
 
 Create a Virtual Network (VNet) named `nautilus-vnet` in the `southcentralus` region with any `IPv4` CIDR block.
 
@@ -32,8 +32,10 @@ Checking the Security and IP address tab we can leave as default:
 Now we can Click "Review + create" and make sure all settings are correct and we can "Create" our virtual network. Which we see the deployment will be complete within a few seconds after creating it.
 <img width="972" height="376" alt="image" src="https://github.com/user-attachments/assets/e62af7a5-a9a6-48df-91fc-7b26cc0a2478" />
 
-# Best Security Practices
+# Notes
 
-- **Use subnets to segment resources** by function (web, app, database tiers)
-- **Implement Network Security Groups (NSGs)** on subnets to control traffic flow
-- **Use Azure Bastion** for secure RDP/SSH access instead of exposing VMs to the internet
+An empty VNet doesn't do much on its own. In a real setup I'd:
+
+- split it into subnets by tier, like web, app and database
+- put Network Security Groups (NSGs) on the subnets to control what can talk to what
+- use Azure Bastion for RDP and SSH so VMs don't need public IPs

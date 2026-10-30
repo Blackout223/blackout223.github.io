@@ -30,7 +30,5 @@ pip3 show ansible
 
 Ansible with version 4.9.0 has now fully been installed. 
 
-# Conclusion
-
-Successfully installed Ansible version 4.9.0 on the jump host using pip3, establishing the foundation for the Nautilus DevOps team's automation and configuration management initiatives. The installation meets all specified requirements: deployed via pip3, accessible globally to all system users, and fully functional for automation workflows.
+Because it was installed as root with pip3, it went into the system-wide Python packages, so every user on the jump host can run the `ansible` commands, not just root.
 

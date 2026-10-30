@@ -31,7 +31,7 @@ We are now logged in as Tony
 Trying to run:
 `useradd -s /sbin/nologin james` - This gives a permission denied, which means tony does not have the correct permissions to create an account. We will need to escalate to root
 
-Running `sudo -l` - Shows we have ALL commands, which refers to the complete set of executable instructions available in the system's command-line interface (CLI), which can be used to manage files, processes, users, networks, and system resources
+Running `sudo -l` shows tony is allowed to run `ALL` commands with sudo, so tony can become root
 ![alt text](image-2.png)
 
 Running `sudo su` - Escalates the user `tony` to `root`

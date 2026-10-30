@@ -6,7 +6,6 @@ title: Gotta Catch'em All - TryHackMe Writeup
 # Gotta Catch'em All
 
 **Difficulty:** Easy  
-**Written:** November 2021  
 **Room:** Based on the original Pokemon series. Can you obtain all the Pokemon in this room?
 
 ## Recon

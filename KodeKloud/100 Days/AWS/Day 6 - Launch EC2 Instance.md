@@ -20,7 +20,7 @@ For this task, create an EC2 instance with following requirements:
 
 # What is Amazon EC2
 
-Amazon EC2 is a service that provides resizable compute capacity in the cloud. Think of EC2 as virtual servers that you can launch in minutes, configure with your operating system and applications, and scale up or down based on your needs. EC2 gives you complete control over your computing resources and runs on Amazon's proven computing environment.
+Amazon EC2 is a service that provides resizable compute capacity in the cloud. Think of EC2 as virtual servers that you can launch in minutes, configure with your operating system and applications, and scale up or down based on your needs.
 # Solution
 
 Head over to EC2 > Instances - This is where we launch the instances
@@ -43,7 +43,7 @@ Create key pair and it will automatically download our private key (Make sure to
 
 If using Linux, you will need to set the correct permissions for the key if you need to SSH from your device. This can be done using this command
 ```sh
-chmod 400 devops-kp.pem
+chmod 400 datacenter-kp.pem
 ```
 
 For Windows:

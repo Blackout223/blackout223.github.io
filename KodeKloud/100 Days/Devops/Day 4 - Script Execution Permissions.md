@@ -32,12 +32,7 @@ cd /tmp
 Running `ls -l` will list all the files in the directory and the permissions.  Which the script has no permissions (`----------` - This means no permissions on the file)
 <img width="1095" height="124" alt="image" src="https://github.com/user-attachments/assets/1c8a1678-77ba-4ddb-a023-b714bd0fcecf" />
 
-To make the file executable, the command `chmod` will need to be run as this changes access permissions.
-```sh
-chmod +x xfusioncorp.sh
-```
-
-This command will also need to be run so it has read/write/execute permissions for all users to be able to execute it
+`chmod` changes a file's permissions. Running a bash script needs read as well as execute, because bash has to read the file to run it, so `chmod +x` on its own isn't enough when the file starts with no permissions at all. I set it to 755:
 ```sh
 chmod 755 xfusioncorp.sh
 ```
@@ -61,7 +56,7 @@ chmod 755 xfusioncorp.sh
 - 4 (read) + 0 (write) + 1 (execute) = **5**
 - Can read and run, but cannot modify
 
-The script now has executable/read/write permissions
+The script now shows `-rwxr-xr-x`
 <img width="1063" height="79" alt="image" src="https://github.com/user-attachments/assets/2577f343-2a58-43e0-ba6a-89ac29b5514f" />
 
 Before executing the script, lets look at the contents of what the script does

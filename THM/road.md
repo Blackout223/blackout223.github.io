@@ -6,7 +6,6 @@ title: Road - TryHackMe Writeup
 # Road
 
 **Difficulty:** Medium  
-**Written:** January 2022  
 **Room:** Inspired by a real-world pentesting engagement.
 
 ## Enumeration

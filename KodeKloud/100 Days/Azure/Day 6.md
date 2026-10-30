@@ -9,7 +9,7 @@ For this task, create a Virtual Network (VNet) named `nautilus-vnet` and one s
 
 # What is a subnet?
 
-A subnet (subnetwork) is a logical subdivision of an IP network created by using a subnet mask to partition the network's IP address space into smaller, manageable segments. It works by borrowing bits from the host portion of an IP address to create additional network identifiers, allowing routers to determine which devices are on the same local network segment versus which require routing to reach, thereby improving network performance, security, and address allocation efficiency.
+A subnet is a smaller range carved out of the VNet's address space. You put resources in subnets so you can group them and apply different rules to each group. For example, web servers in one subnet and databases in another, with an NSG controlling what can reach the databases.
 
 # Solution
 

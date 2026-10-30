@@ -2,16 +2,16 @@
 layout: default
 title: TryHackMe Writeups
 ---
-My TryHackMe write-ups. The older ones are from when I was just starting out, so you can see how my approach has changed.
+My write-ups for TryHackMe rooms and learning paths.
 ---
 # Rooms
 
-| Room | Description | Difficulty | Written |
-|------|-------------|------------|---------|
-| [Traverse](/THM/traverse) | Challenge your secure coding skills to restore a compromised website | Easy | Aug 2023 |
-| [Road](/THM/road) | Inspired by a real-world pentesting engagement | Medium | Jan 2022 |
-| [Gotta Catch'em All](/THM/gotta-catch-em-all) | This room is based on the original Pokemon series. Can you obtain all the Pokemon in this room? |  Easy | Nov 2021 |
-| [VulnNet: Active](/THM/VulnNet%20Active%20Writeup.pdf) | VulnNet Entertainment just moved their entire infrastructure... Check this out... | Medium | Sep 2021 |
+| Room | Description | Difficulty |
+|------|-------------|------------|
+| [Traverse](/THM/traverse) | Challenge your secure coding skills to restore a compromised website | Easy |
+| [Road](/THM/road) | Inspired by a real-world pentesting engagement | Medium |
+| [Gotta Catch'em All](/THM/gotta-catch-em-all) | This room is based on the original Pokemon series. Can you obtain all the Pokemon in this room? | Easy |
+| [VulnNet: Active](/THM/VulnNet%20Active%20Writeup.pdf) | VulnNet Entertainment just moved their entire infrastructure... Check this out... | Medium |
 
 # Defending Azure Path
 

@@ -16,9 +16,9 @@ I'm looking for a Cloud Security Engineer role. AWS is my main platform and I'm 
 
 ## Featured projects
 
-### [CostCanary](https://github.com/Blackout223/costcanary)
+### [BillHound](https://github.com/Blackout223/billhound)
 
-When someone steals AWS keys, it often shows up in the bill before anything else. Things like new regions being used, GPU instances for cryptomining, or a big jump in data going out. CostCanary goes through AWS billing exports (Cost and Usage Reports) looking for those signs and ranks what it finds by severity. It doesn't need any AWS credentials, and it can be run as a check in a CI pipeline.
+When someone steals AWS keys, it often shows up in the bill before anything else. Things like new regions being used, GPU instances for cryptomining, or a big jump in data going out. BillHound goes through AWS billing exports (Cost and Usage Reports) looking for those signs and ranks what it finds by severity. It doesn't need any AWS credentials, and it can be run as a check in a CI pipeline.
 
 Python, pytest, GitHub Actions
 
