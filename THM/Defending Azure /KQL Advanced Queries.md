@@ -92,6 +92,8 @@ VMComputer
 
 ![Union filtered to one machine](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1738611435570.png)
 
+![ThreatStatusDetails results](/THM/images/kql/12.png)
+
 **Run the "Combining Multiple Columns From Different Tables" query and modify the time range. What is the threat status detail?**  
 <span class="spoiler" tabindex="0">Threat Status is currently not supported in MDATP</span>
 
@@ -169,9 +171,13 @@ Perf
 
 ![FreeSpaceinGB column](https://tryhackme-images.s3.amazonaws.com/user-uploads/6601e243753b8d484668851e/room-content/6601e243753b8d484668851e-1738616178912.png)
 
+![FreeSpaceinGB column](/THM/images/kql/13.png)
+
 **Run the "Using Extend To Calculate Free Disk Spaces" query and modify the time range. What new column is created?**  
 <span class="spoiler" tabindex="0">FreeSpaceinGB</span>
 
+
+![4624 showing as Logon](/THM/images/kql/14.png)
 
 **What is the event category for event ID 4624?**  
 <span class="spoiler" tabindex="0">Logon</span>
