@@ -37,7 +37,9 @@ Select **Attach network interface**, choose `datacenter-nic` from the dropdown a
 
 The NIC is now attached.
 
-![datacenter-nic attached](/KodeKloud/100%20Days/images/azure-day9/06.png) This can also be checked by searching for **Network interfaces** and seeing that `datacenter-nic` shows as attached to the VM.
+![datacenter-nic attached](/KodeKloud/100%20Days/images/azure-day9/06.png)
+
+This can also be checked by searching for **Network interfaces** and seeing that `datacenter-nic` shows as attached to the VM.
 
 ![Network interfaces showing both NICs attached to datacenter-vm](/KodeKloud/100%20Days/images/azure-day9/07.png)
 
