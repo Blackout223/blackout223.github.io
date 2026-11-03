@@ -27,6 +27,8 @@ Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure.
 | [Day 4](/KodeKloud/100%20Days/AWS/Day%204%20-%20%20Enable%20Versioning%20for%20S3%20Bucket) | Enable Versioning for S3 Bucket |
 | [Day 5](/KodeKloud/100%20Days/AWS/Day%205%20-%20Create%20GP3%20Volume) | Create GP3 Volume |
 | [Day 6](/KodeKloud/100%20Days/AWS/Day%206%20-%20Launch%20EC2%20Instance) | Launch EC2 Instance |
+| [Day 7](/KodeKloud/100%20Days/AWS/Day%207%20-%20Change%20EC2%20Instance%20Type) | Change EC2 Instance Type |
+| [Day 8](/KodeKloud/100%20Days/AWS/Day%208%20-%20Enable%20Stop%20Protection%20for%20EC2%20Instance) | Enable Stop Protection for EC2 Instance |
 
 
 # Azure
@@ -39,5 +41,8 @@ Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure.
 | [Day 4](/KodeKloud/100%20Days/Azure/Day%204) | Create a Virtual Network (VNet) in Azure |
 | [Day 5](/KodeKloud/100%20Days/Azure/Day%205) | Create a Virtual Network (IPv4) in Azure |
 | [Day 6](/KodeKloud/100%20Days/Azure/Day%206) | Create a Subnet in Azure Virtual Network |
+| [Day 7](/KodeKloud/100%20Days/Azure/Day%207%20-%20Create%20a%20Public%20IP%20Address) | Create a Public IP Address for Azure VM |
+| [Day 8](/KodeKloud/100%20Days/Azure/Day%208%20-%20Attach%20Managed%20Disk%20to%20Azure%20VM) | Attach Managed Disk to Azure VM |
+| [Day 9](/KodeKloud/100%20Days/Azure/Day%209%20-%20Attach%20Network%20Interface%20to%20Azure%20VM) | Attach Network Interface Card (NIC) to Azure VM |
 
 ---
