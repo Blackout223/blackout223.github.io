@@ -26,18 +26,18 @@ Add the virtual network name:
 Swap the region to:
 `South Central US`
 
-<img width="1164" height="697" alt="image" src="https://github.com/user-attachments/assets/a36ba37f-1531-470d-b052-3373d0c75cb3" />
+<img alt="Create virtual network with the name nautilus-vnet" src="/KodeKloud/100%20Days/images/azure-day6/03.png" />
 
 After all fields are filled in correctly, head to **IP Addresses** tab, which the IP we need to use is already the default(`10.0.0.0/16`). To create our subnet, we need to click the pencil icon to add it:
-<img width="865" height="508" alt="image" src="https://github.com/user-attachments/assets/24157498-94d6-43c5-8720-68ccf6ad45e9" />
+<img alt="Editing the default subnet" src="/KodeKloud/100%20Days/images/azure-day6/04.png" />
 
 This will open up a sidebar - Which we can fill out the name to `nautilus-subnet`:
-<img width="591" height="1244" alt="image" src="https://github.com/user-attachments/assets/7f61f3fc-fad0-46a0-b7fb-240a593d05ce" />
+<img alt="Renaming the subnet to nautilus-subnet" src="/KodeKloud/100%20Days/images/azure-day6/05.png" />
 
 When it's saved, it will show up with the name, IP address range and size (How many IP addresses there are).
-<img width="850" height="270" alt="image" src="https://github.com/user-attachments/assets/c4f166f3-cedf-47e6-a41c-dc7082c4f127" />
+<img alt="nautilus-subnet in the address space" src="/KodeKloud/100%20Days/images/azure-day6/06.png" />
 
 This can now be Reviewed and Created
 
 Validation has passed, now we can fully create the virtual network. After around 20-30 seconds, the deployment will be completed:
-<img width="969" height="382" alt="image" src="https://github.com/user-attachments/assets/ce9da2de-6946-42ec-b74b-4dd33164c0ba" />
+<img alt="Deployment complete" src="/KodeKloud/100%20Days/images/azure-day6/07.png" />

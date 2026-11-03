@@ -21,7 +21,13 @@ An IP address is a unique number given to every device on a network.
 
 Search for **Public IP addresses** in the search bar and click **+ Create**.
 
+![Searching for Public IP addresses](/KodeKloud/100%20Days/images/azure-day7/01.png)
+
+![Public IP addresses page with + Create](/KodeKloud/100%20Days/images/azure-day7/02.png)
+
 Most of the details can be left as default. I entered the name `nautilus-pip` and left it as IPv4, which is the standard and most widely used.
+
+![Create public IP address with the name nautilus-pip](/KodeKloud/100%20Days/images/azure-day7/03.png)
 
 Then **Review + create**, wait for the "Validation passed" message, and click **Create**. The deployment takes around 10 to 30 seconds.
 
