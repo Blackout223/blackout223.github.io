@@ -32,6 +32,8 @@ Half the cost for half the memory, which is worth it if the instance isn't using
 
 Head over to EC2 to view the instance.
 
+![devops-ec2 running as t2.micro](/KodeKloud/100%20Days/images/aws-day7/01.png)
+
 The instance has to be stopped before the type can be changed: **Instance state > Stop instance**. After a few seconds it shows as stopped.
 
 With it stopped, select the instance and go to **Actions > Instance settings > Change instance type**, then change it from `t2.micro` to `t2.nano`.
