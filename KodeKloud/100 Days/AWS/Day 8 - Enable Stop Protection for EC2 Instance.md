@@ -23,7 +23,11 @@ It's a separate setting from termination protection, which stops the instance be
 
 Head over to **EC2 > Instances**, which is where all of the instances live.
 
+![EC2 Instances page](/KodeKloud/100%20Days/images/aws-day8/01.png)
+
 In the instances list, tick the checkbox next to `devops-ec2`. Selecting it is what lets the Actions menu act on this specific instance.
+
+![devops-ec2 selected](/KodeKloud/100%20Days/images/aws-day8/02.png)
 
 With the instance selected, open **Actions > Instance settings > Change stop protection**.
 

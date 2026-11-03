@@ -36,11 +36,23 @@ Head over to EC2 to view the instance.
 
 The instance has to be stopped before the type can be changed: **Instance state > Stop instance**. After a few seconds it shows as stopped.
 
+![Instance state > Stop instance](/KodeKloud/100%20Days/images/aws-day7/02.png)
+
+![devops-ec2 stopped](/KodeKloud/100%20Days/images/aws-day7/03.png)
+
 With it stopped, select the instance and go to **Actions > Instance settings > Change instance type**, then change it from `t2.micro` to `t2.nano`.
+
+![Actions > Instance settings > Change instance type](/KodeKloud/100%20Days/images/aws-day7/04.png)
+
+![Changing t2.micro to t2.nano](/KodeKloud/100%20Days/images/aws-day7/05.png)
 
 Now the instance can be started again: select `devops-ec2` > **Instance state > Start instance**.
 
+![Instance type changed, starting the instance](/KodeKloud/100%20Days/images/aws-day7/06.png)
+
 After a few seconds the instance is running with 2/2 checks passed and the new instance type.
+
+![devops-ec2 running as t2.nano with 2/2 checks passed](/KodeKloud/100%20Days/images/aws-day7/07.png)
 
 # Notes
 
