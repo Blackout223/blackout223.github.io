@@ -25,7 +25,11 @@ Most of the details can be left as default. I entered the name `nautilus-pip` an
 
 Then **Review + create**, wait for the "Validation passed" message, and click **Create**. The deployment takes around 10 to 30 seconds.
 
+![Deployment complete](/KodeKloud/100%20Days/images/azure-day7/04.png)
+
 When it says "Your deployment is complete", click **Go to resource**. An IP address has been assigned (`40.76.159.240`).
+
+![nautilus-pip with its IP address](/KodeKloud/100%20Days/images/azure-day7/05.png)
 
 # Notes
 

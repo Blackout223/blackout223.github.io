@@ -17,13 +17,25 @@ A virtual disk works like a physical hard drive or SSD for a VM. The OS disk hol
 
 Search for **Virtual machines** in the portal and select `nautilus-vm`.
 
+![Searching for virtual machines](/KodeKloud/100%20Days/images/azure-day8/01.png)
+
+![nautilus-vm in the list](/KodeKloud/100%20Days/images/azure-day8/02.png)
+
 Go to **Settings > Disks**.
 
+![Disks page with no data disks attached](/KodeKloud/100%20Days/images/azure-day8/03.png)
+
 Select **Attach existing disks**. A new row appears below, where I selected `nautilus-disk`.
+
+![New data disk row](/KodeKloud/100%20Days/images/azure-day8/04.png)
+
+![nautilus-disk selected](/KodeKloud/100%20Days/images/azure-day8/05.png)
 
 Click **Apply** to attach it. After a few seconds it's fully attached to the VM.
 
 Checking the disk itself, its state shows as **Attached**.
+
+![Disk state Attached](/KodeKloud/100%20Days/images/azure-day8/06.png)
 
 # Notes
 

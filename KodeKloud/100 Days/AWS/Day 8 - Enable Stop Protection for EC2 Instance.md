@@ -27,8 +27,14 @@ In the instances list, tick the checkbox next to `devops-ec2`. Selecting it is w
 
 With the instance selected, open **Actions > Instance settings > Change stop protection**.
 
+![Actions > Instance settings > Change stop protection](/KodeKloud/100%20Days/images/aws-day8/03.png)
+
 In the dialog that opens, tick **Enable** under Stop protection, then **Save**. Ticking Enable sets the `DisableApiStop` attribute to true.
+
+![Stop protection enabled](/KodeKloud/100%20Days/images/aws-day8/04.png)
 
 To confirm it applied, reopen **Actions > Instance settings > Change stop protection**. The Enable box should already be ticked.
 
 As a final check, try **Instance state > Stop instance**. AWS blocks it and returns a message saying the instance has stop protection enabled, which proves the setting is live.
+
+![Failed to stop the instance](/KodeKloud/100%20Days/images/aws-day8/05.png)
