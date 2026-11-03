@@ -8,7 +8,7 @@ description: Five years in IT support and security operations, now building towa
 
 I'm a Technical Support Representative at TryHackMe. Part of my role is investigating AWS abuse alerts using CloudTrail, VPC Flow Logs and Elastic SIEM, and I lead the company's bug bounty programme. Before TryHackMe I worked in IT support for companies in the financial sector, where I looked after Microsoft 365, Entra ID and Intune, helped roll out EDR, and worked on Cyber Essentials Plus and ISO 27001.
 
-I'm looking to land a Cloud Engineer role, with the long-term goal of becoming a Cloud Security Engineer. AWS is my main platform and I'm open to Azure and GCP.
+My goal is to become a Cloud Engineer, with the long-term goal of landing a Cloud Security Engineer role. AWS is my main platform and I'm open to Azure and GCP.
 
 [GitHub](https://github.com/Blackout223) · [TryHackMe](https://tryhackme.com/p/Blackout)
 
