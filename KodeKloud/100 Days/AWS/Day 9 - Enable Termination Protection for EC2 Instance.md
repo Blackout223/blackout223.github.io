@@ -23,7 +23,7 @@ It's the partner to stop protection from [Day 8](/KodeKloud/100%20Days/AWS/Day%2
 
 Heading over to the running instances in EC2, we can see `devops-ec2`.
 
-![devops-ec2 in the instances list](/KodeKloud/100%20Days/images/aws-day9/01.png)
+![devops-ec2 in the instances list](/KodeKloud/100%20Days/images/aws-day9/01-instances.png)
 
 Select `devops-ec2` by ticking the checkbox next to it. Selecting it is what lets the Actions menu act on this specific instance.
 
