@@ -37,7 +37,7 @@ Tick **Enable** and **Save**. Ticking Enable sets the `DisableApiTermination` at
 
 As a final check, try **Instance state > Terminate (delete) instance**. AWS blocks the action and says termination protection is enabled, which proves the setting is live.
 
-![Termination blocked by termination protection](/KodeKloud/100%20Days/images/aws-day9/04.png)
+![Termination blocked by termination protection](/KodeKloud/100%20Days/images/aws-day9/04-terminate-blocked.png)
 
 # Notes
 
