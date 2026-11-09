@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 9 - Enable Termination Protection for EC2 Instance
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 [← Back to KodeKloud 100 Days](/kodekloud)

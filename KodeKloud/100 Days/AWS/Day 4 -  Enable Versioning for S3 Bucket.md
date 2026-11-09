@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 4 - Enable Versioning for S3 Bucket
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

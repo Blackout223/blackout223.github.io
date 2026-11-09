@@ -1,6 +1,7 @@
 ---
 layout: default
 title: TryHackMe Writeups
+description: "My TryHackMe write-ups for challenges and learning paths"
 ---
 My TryHackMe write-ups, split into standalone challenges and learning paths.
 

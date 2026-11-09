@@ -1,6 +1,7 @@
 ---
 layout: default
 title: NextWork Projects
+description: "Guided AWS projects I completed through NextWork"
 ---
 
 # NextWork Projects

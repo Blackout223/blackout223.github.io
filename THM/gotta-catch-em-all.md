@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Gotta Catch'em All - TryHackMe Writeup
+description: "My TryHackMe write-ups for challenges and learning paths"
 ---
 
 [← Back to TryHackMe write-ups](/thm)

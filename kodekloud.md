@@ -1,6 +1,7 @@
 ---
 layout: default
 title: KodeKloud 100 Days
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure.
 

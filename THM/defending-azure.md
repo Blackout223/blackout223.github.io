@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Defending Azure - TryHackMe
+description: "Notes from TryHackMe's Defending Azure learning path"
 ---
 
 [← Back to TryHackMe write-ups](/thm)

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 7 - Linux SSH Authentication
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

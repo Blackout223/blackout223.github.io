@@ -1,6 +1,7 @@
 ---
 layout: default
 title: AWS Projects
+description: "AWS projects I've designed and built myself"
 ---
 
 # AWS Projects

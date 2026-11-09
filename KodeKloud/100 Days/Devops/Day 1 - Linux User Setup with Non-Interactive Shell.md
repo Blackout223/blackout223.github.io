@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 1 - Linux User Setup with Non-Interactive Shell
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Azure Day 5 - Create Virtual Network (IPv4) in Azure
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

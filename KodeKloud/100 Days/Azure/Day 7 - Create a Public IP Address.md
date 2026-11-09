@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 7 - Create a Public IP Address for Azure VM
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 [← Back to KodeKloud 100 Days](/kodekloud)

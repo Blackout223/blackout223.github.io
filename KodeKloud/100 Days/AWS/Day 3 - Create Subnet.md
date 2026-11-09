@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 3 - Create Subnet
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

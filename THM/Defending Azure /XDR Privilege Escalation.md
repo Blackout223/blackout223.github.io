@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Microsoft Defender XDR - Privilege Escalation
+description: "Notes from TryHackMe's Defending Azure learning path"
 ---
 
 [← Back to Defending Azure](/THM/defending-azure)

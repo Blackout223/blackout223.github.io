@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 8 - Attach Managed Disk to Azure VM
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 [← Back to KodeKloud 100 Days](/kodekloud)

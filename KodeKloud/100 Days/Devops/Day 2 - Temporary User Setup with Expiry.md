@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 2 - Temporary User Setup with Expiry
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: AWS Threat Detection and Automated Response Pipeline
+description: "AWS projects I've designed and built myself"
 ---
 
 # Scenario

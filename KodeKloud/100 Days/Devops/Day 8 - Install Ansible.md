@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 8 - Install Ansible
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

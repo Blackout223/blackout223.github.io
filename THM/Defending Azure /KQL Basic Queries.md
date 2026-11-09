@@ -1,6 +1,7 @@
 ---
 layout: default
 title: KQL (Kusto) - Basic Queries
+description: "Notes from TryHackMe's Defending Azure learning path"
 ---
 
 [← Back to Defending Azure](/THM/defending-azure)

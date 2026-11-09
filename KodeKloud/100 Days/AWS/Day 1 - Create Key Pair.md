@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 1 - Create Key Pair
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Day 2 - Create an Azure VM
+description: "Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure"
 ---
 
 # Overview
