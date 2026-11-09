@@ -30,6 +30,7 @@ Working through KodeKloud's 100 Days challenges for DevOps, AWS and Azure.
 | [Day 7](/KodeKloud/100%20Days/AWS/Day%207%20-%20Change%20EC2%20Instance%20Type) | Change EC2 Instance Type |
 | [Day 8](/KodeKloud/100%20Days/AWS/Day%208%20-%20Enable%20Stop%20Protection%20for%20EC2%20Instance) | Enable Stop Protection for EC2 Instance |
 | [Day 9](/KodeKloud/100%20Days/AWS/Day%209%20-%20Enable%20Termination%20Protection%20for%20EC2%20Instance) | Enable Termination Protection for EC2 Instance |
+| [Day 10](/KodeKloud/100%20Days/AWS/Day%2010%20-%20Attach%20an%20Elastic%20IP%20to%20an%20EC2%20Instance) | Attach an Elastic IP to an EC2 Instance |
 
 
 # Azure
